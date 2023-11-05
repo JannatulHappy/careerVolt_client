@@ -1,14 +1,14 @@
 import React from "react";
 import logo from "../../../assets/logo-inverse.svg";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Header = () => {
   const li = (
     <>
       <li>
-        <a href="#" className="hover:text-primary">
+        <Link to="/" className="hover:text-primary">
           {" "}
           HOME
-        </a>
+        </Link>
         {/* <NavLink>Home</NavLink> */}
       </li>
       <li tabIndex={0}>
@@ -35,15 +35,15 @@ const Header = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  class="w-6 h-6 text-secondary"
+                  className="w-6 h-6 text-secondary"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
-           Post a job
+                Post a job
               </a>
             </li>
             <li>
@@ -53,15 +53,15 @@ const Header = () => {
         </details>
       </li>
       <li className="">
-        <a className="hover:text-primary" href="#">
+        <a className="hover:text-primary" href="">
           pages
         </a>
       </li>
     </>
   );
   return (
-    <div className=" bg-secondary">
-      <div className="mx-auto text-white navbar max-w-[1360px] px-5">
+    <div className="py-3 border-b border-white shadow-xl bg-secondary">
+      <div className="mx-auto text-white navbar max-w-[1400px] px-5">
         <div className="flex-1">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -93,7 +93,8 @@ const Header = () => {
         </div>
         <div className="flex-none hidden lg:flex">
           <ul className="px-1 uppercase menu menu-horizontal">{li}</ul>
-          <button
+          <Link
+            to="/register"
             type="button"
             className="text-white hover:text-primary  border-2 border-blue-700  inline-flex items-center font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-3 mb-2  "
           >
@@ -104,14 +105,15 @@ const Header = () => {
               className="w-6 h-5 mr-2"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
             SIGN UP
-          </button>
-          <button
+          </Link>
+          <Link
+            to="/login"
             type="button"
             className="inline-flex items-center px-5 py-2.5 mb-2 ml-2 text-sm font-medium text-center text-white border border-blue-700 rounded-lg hover:text-primary bg-primary hover:bg-transparent "
           >
@@ -130,7 +132,7 @@ const Header = () => {
               />
             </svg>
             LOGIN
-          </button>
+          </Link>
         </div>
       </div>
     </div>
