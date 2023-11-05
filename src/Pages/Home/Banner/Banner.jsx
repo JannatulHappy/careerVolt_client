@@ -2,14 +2,14 @@ import React from "react";
 import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-import bannerImg01 from "../../../assets/banner2.png";
+import bannerImg01 from "../../../assets/banner01.png";
 const Banner = () => {
   const settings = {
     dots: true,
     infinite: true,
     arrows: false,
-    autoplay: true,
-    autoplaySpeed: 1500,
+    // autoplay: true,
+    autoplaySpeed: 1300,
     slidesToShow: 2,
     slidesToScroll: 2,
     appendDots: (dots) => (
