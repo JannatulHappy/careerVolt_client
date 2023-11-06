@@ -60,7 +60,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="py-3 border-b border-white shadow-xl bg-secondary">
+    <div className="py-3 border-b border-gray-700 shadow-xl bg-secondary">
       <div className="px-5 mx-auto text-white navbar max-w-7xl">
         <div className="flex-1">
           <div className="dropdown">
