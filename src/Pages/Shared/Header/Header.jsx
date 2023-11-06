@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../../assets/logo-inverse.svg";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        console.log(error);
+        // An error happened.
+      });
+  };
   const li = (
     <>
       <li>
@@ -112,27 +124,35 @@ const Header = () => {
             </svg>
             SIGN UP
           </Link>
-          <Link
-            to="/login"
-            type="button"
-            className="inline-flex items-center px-5 py-2.5 mb-2 ml-2 text-sm font-medium text-center text-white border border-blue-700 rounded-lg hover:text-primary bg-primary hover:bg-transparent "
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6 mr-2"
+          {user?.email  ? (
+            <button onClick={handleSignOut}>
+              <a className="py-2 text-lg font-medium rounded-lg px-7 bg-orange">
+                Logout
+              </a>
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              type="button"
+              className="inline-flex items-center px-5 py-2.5 mb-2 ml-2 text-sm font-medium text-center text-white border border-blue-700 rounded-lg hover:text-primary bg-primary hover:bg-transparent "
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
-              />
-            </svg>
-            LOGIN
-          </Link>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 h-6 mr-2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                />
+              </svg>
+              LOGIN
+            </Link>
+          )}
         </div>
       </div>
     </div>

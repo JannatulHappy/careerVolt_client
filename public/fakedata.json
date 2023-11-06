@@ -1,8 +1,4 @@
-/* "img": "https://i.ibb.co/yhnbSGy/company-1-52x52.png",
-    "img": "https://i.ibb.co/J3Nh3rX/company-2-53x46.png",
-    "img": "https://i.ibb.co/4FJXjYy/company-3-42x42.png",
-    "img": "https://i.ibb.co/rcWPbYd/company-4-40x43.png",
-    "img": "https://i.ibb.co/fxxMwv1/company-5-52x52.png.png",*/
+
 
 [
   {
@@ -23,7 +19,7 @@
     "Posted_by": "Mark Wilson",
     "Date_posted": "2023-11-15",
     "Website": "https://www.innovatetech.com",
-    "Job_poster's_email": "mark.wilson@example.com"
+    "Job_poster_email": "mark.wilson@example.com"
   },
   {
     "Job_title": "Content Writer",
@@ -43,7 +39,7 @@
     "Posted_by": "Sarah Adams",
     "Date_posted": "2023-11-20",
     "Website": "https://www.contentcreators.com",
-    "Job_poster's_email": "sarah.adams@example.com"
+    "Job_poster_email": "sarah.adams@example.com"
   },
   {
     "Job_title": "UI/UX Designer",
@@ -63,7 +59,7 @@
     "Posted_by": "Emily Martinez",
     "Date_posted": "2023-11-25",
     "Website": "https://www.pixelperfect.com",
-    "Job_poster's_email": "emily.martinez@example.com"
+    "Job_poster_email": "emily.martinez@example.com"
   },
   {
     "Job_title": "Data Analyst",
@@ -83,7 +79,7 @@
     "Posted by": "Alex Turner",
     "Date_posted": "2023-12-01",
     "Website": "https://www.datamasters.com",
-    "Job_poster's_email": "alex.turner@example.com"
+    "Job_poster_email": "alex.turner@example.com"
   },
   {
     "Job_title": "Marketing Manager",
@@ -103,7 +99,7 @@
     "Posted by": "John Anderson",
     "Date_posted": "2023-12-05",
     "Website": "https://www.strategicmarketing.com",
-    "Job_poster's_email": "john.anderson@example.com"
+    "Job_poster_email": "john.anderson@example.com"
   },
   {
     "Job_title": "Network Administrator",
@@ -123,7 +119,7 @@
     "Posted by": "Chris Davis",
     "Date_posted": "2023-12-10",
     "Website": "https://www.networkpros.com",
-    "Job_poster's_email": "chris.davis@example.com"
+    "Job_poster_email": "chris.davis@example.com"
   },
 
   {
@@ -144,7 +140,7 @@
     "Posted_by": "Melissa Parker",
     "Date_posted": "2023-12-25",
     "Website": "https://www.artisticvisions.com",
-    "Job_poster's_email": "melissa.parker@example.com"
+    "Job_poster_email": "melissa.parker@example.com"
   },
 
   {
@@ -165,7 +161,7 @@
     "Posted by": "John Doe",
     "Date_posted": "2023-11-01",
     "Website": "https://www.techsolutions.com",
-    "Job_poster's_email": "john.doe@example.com"
+    "Job_poster_email": "john.doe@example.com"
   },
   {
     "Job_title": "Digital Marketer",
@@ -185,7 +181,7 @@
     "Posted by": "Jane Smith",
     "Date_posted": "2023-11-05",
     "Website": "https://www.digitalboosters.com",
-    "Job_poster's_email": "jane.smith@example.com"
+    "Job_poster_email": "jane.smith@example.com"
   },
   {
     "Job_title": "Graphic Designer",
@@ -206,7 +202,7 @@
     "Posted_by": "David Johnson",
     "Date_posted": "2023-11-10",
     "Website": "https://www.pixelcraftstudios.com",
-    "Job_poster's_email": "david.johnson@example.com"
+    "Job_poster_email": "david.johnson@example.com"
   },
   {
     "Job_title": "Software Engineer",
@@ -227,7 +223,7 @@
     "Posted_by": "Mark Wilson",
     "Date_posted": "2023-11-15",
     "Website": "https://www.innovatetech.com",
-    "Job_poster's_email": "mark.wilson@example.com"
+    "Job_poster_email": "mark.wilson@example.com"
   },
   {
     "Job_title": "Content Writer",
@@ -248,7 +244,7 @@
     "Posted_by": "Sarah Adams",
     "Date_posted": "2023-11-20",
     "Website": "https://www.contentcreators.com",
-    "Job_poster's_email": "sarah.adams@example.com"
+    "Job_poster_email": "sarah.adams@example.com"
   },
   {
     "Job_title": "UI/UX Designer",
@@ -269,7 +265,7 @@
     "Posted by": "Emily Martinez",
     "Date_posted": "2023-11-25",
     "Website": "https://www.pixelperfect.com",
-    "Job_poster's_email": "emily.martinez@example.com"
+    "Job_poster_email": "emily.martinez@example.com"
   },
 
   {
@@ -290,7 +286,7 @@
     "Posted by": "Alex Turner",
     "Date_posted": "2023-12-01",
     "Website": "https://www.datamasters.com",
-    "Job_poster's_email": "alex.turner@example.com"
+    "Job_poster_email": "alex.turner@example.com"
   },
   {
     "Job_title": "Social Media Manager",
@@ -310,7 +306,7 @@
     "Posted by": "Lucy Parker",
     "Date_posted": "2023-12-05",
     "Website": "https://www.socialwave.com",
-    "Job_poster's_email": "lucy.parker@example.com"
+    "Job_poster_email": "lucy.parker@example.com"
   },
   {
     "Job_title": "Mobile App Developer",
@@ -329,7 +325,7 @@
     "Posted_by": "Michael Rogers",
     "Date_posted": "2023-12-10",
     "Website": "https://www.appgenius.com",
-    "Job_poster's_email": "michael.rogers@example.com"
+    "Job_poster_email": "michael.rogers@example.com"
   },
   {
     "Job_title": "Video Editor",
@@ -349,7 +345,7 @@
     "Posted by": "Olivia Collins",
     "Date_posted": "2023-12-15",
     "Website": "https://www.filmmakers.com",
-    "Job_poster's_email": "olivia.collins@example.com"
+    "Job_poster_email": "olivia.collins@example.com"
   },
   {
     "Job_title": "Database Administrator",
@@ -369,7 +365,7 @@
     "Posted_by": "Daniel White",
     "Date_posted": "2023-12-20",
     "Website": "https://www.datahub.com",
-    "Job poster's_email": "daniel.white@example.com"
+    "Job poster_email": "daniel.white@example.com"
   },
   {
     "Job_title": "Digital Illustrator",
@@ -389,7 +385,7 @@
     "Posted_by": "Eva Hernandez",
     "Date_posted": "2023-12-25",
     "Website": "https://www.artisticvisions.com",
-    "Job_poster's_email": "eva.hernandez@example.com"
+    "Job_poster_email": "eva.hernandez@example.com"
   },
   {
     "Job_title": "Frontend Developer",
@@ -409,7 +405,7 @@
     "Posted_by": "John Roberts",
     "Date_posted": "2023-12-30",
     "Website": "https://www.webwonders.com",
-    "Job_poster's_email": "john.roberts@example.com"
+    "Job_poster_email": "john.roberts@example.com"
   },
   {
     "Job_title": "Content Marketing Specialist",
@@ -429,7 +425,7 @@
     "Posted_by": "Daniel Adams",
     "Date_posted": "2024-01-05",
     "Website": "https://www.brandbuzz.com",
-    "Job_poster's _email": "daniel.adams@example.com"
+    "Job_poster _email": "daniel.adams@example.com"
   },
   {
     "Job_title": "Game Developer",
@@ -449,7 +445,7 @@
     "Posted by": "Sophia Davis",
     "Date_posted": "2024-01-10",
     "Website": "https://www.gamemaster.com",
-    "Job_poster's_email": "sophia.davis@example.com"
+    "Job_poster_email": "sophia.davis@example.com"
   },
   {
     "Job_title": "Graphic Designer",
@@ -469,6 +465,6 @@
     "Posted by": "Lucas Miller",
     "Date_posted": "2024-01-15",
     "Website": "https://www.designcraft.com",
-    "Job_poster's _email": "lucas.miller@example.com"
+    "Job_poster _email": "lucas.miller@example.com"
   }
 ]
