@@ -140,20 +140,294 @@ const baseDate=new Date()
             {isLoading && <div>Loading...</div>}
             {isError && <div>Error fetching data</div>}
 
-           
-          </TabPanel>
-          <TabPanel>
-            {digitalCategories.map((web) => (
-              <h2 key={web._id}>
-                {web.Category} - {web.Job_title}
-              </h2>
+            {webCategories?.map((web) => (
+              <motion.div
+                whileHover="hover"
+                variants={{ hover: { scale: 1.05 } }}
+                transition={{ duration: 0.9, ease: "backInOut" }}
+                className="relative px-4 py-4 my-12 overflow-x-auto shadow-lg sm:rounded-lg"
+                key={web._id}
+              >
+                <table className="text-left text-gray-500 lg:w-full w-[1040px] ">
+                  <tbody className="p">
+                    <tr className="text-left bg-white ">
+                      <td className="px-6 py-4 border-r-2">
+                        <div className="text-lg ">
+                          {/* {web.Date_posted}
+                          {
+                            (formatDistance(
+                              parseISO(web.Date_posted, new Date())
+                            ),
+                            new Date())
+                          }{" "} */}
+                          {formatDistanceStrict(
+                            parseISO(web.Date_posted, new Date()),
+                            baseDate
+                          )}{" "}
+                          ago
+                        </div>
+                      </td>
+                      <td className="py-5 pl-3">
+                        <img src={web.img} alt="" className="w-14" />
+                      </td>
+                      <td className="px-6 py-4">
+                        <div>
+                          <h3 className="text-xl font-medium text-black">
+                            {web.Job_title}
+                          </h3>
+                          <p className="text-base font-normal">{web.Company}</p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 text-left text-black">
+                        <div className="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="#5f63ff"
+                            className="w-5 h-5 mr-2"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
+                            />
+                          </svg>
+                          <p className="text-lg">{web.Price_range} / month</p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="#5f63ff"
+                            className="w-5 h-5 mr-2"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <p className="text-lg font-normal text-black">
+                            {web.Location}
+                          </p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 ">
+                        <div className="text-lg text-center text-white bg-gray-400 ">
+                          {web.Experience_level}
+                        </div>
+                      </td>
+                      <td className="py-4 text-end">
+                        <Link
+                          to=""
+                          className="inline-flex items-center px-5 py-2.5 mb-2 ml-2 font-medium text-center text-base text-white border border-blue-700 rounded-lg hover:text-primary bg-primary hover:bg-transparent"
+                        >
+                          BID NOW
+                        </Link>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </motion.div>
             ))}
           </TabPanel>
           <TabPanel>
-            {graphicCategories.map((web) => (
-              <h2 key={web._id}>
-                {web.Category} - {web.Job_title}
-              </h2>
+            {isLoading && <div>Loading...</div>}
+            {isError && <div>Error fetching data</div>}
+
+            {digitalCategories?.map((web) => (
+              <motion.div
+                whileHover="hover"
+                variants={{ hover: { scale: 1.05 } }}
+                transition={{ duration: 0.9, ease: "backInOut" }}
+                className="relative px-4 py-4 my-12 overflow-x-auto shadow-lg sm:rounded-lg"
+                key={web._id}
+              >
+                <table className="text-left text-gray-500 lg:w-full w-[1040px] ">
+                  <tbody className="p">
+                    <tr className="text-left bg-white ">
+                      <td className="px-6 py-4 border-r-2">
+                        <div className="text-lg ">
+                          {/* {web.Date_posted}
+                          {
+                            (formatDistance(
+                              parseISO(web.Date_posted, new Date())
+                            ),
+                            new Date())
+                          }{" "} */}
+                          {formatDistanceStrict(
+                            parseISO(web.Date_posted, new Date()),
+                            baseDate
+                          )}{" "}
+                          ago
+                        </div>
+                      </td>
+                      <td className="py-5 pl-3">
+                        <img src={web.img} alt="" className="w-14" />
+                      </td>
+                      <td className="px-6 py-4">
+                        <div>
+                          <h3 className="text-xl font-medium text-black">
+                            {web.Job_title}
+                          </h3>
+                          <p className="text-base font-normal">{web.Company}</p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 text-left text-black">
+                        <div className="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="#5f63ff"
+                            className="w-5 h-5 mr-2"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
+                            />
+                          </svg>
+                          <p className="text-lg">{web.Price_range} / month</p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="#5f63ff"
+                            className="w-5 h-5 mr-2"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <p className="text-lg font-normal text-black">
+                            {web.Location}
+                          </p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 ">
+                        <div className="text-lg text-center text-white bg-gray-400 ">
+                          {web.Experience_level}
+                        </div>
+                      </td>
+                      <td className="py-4 text-end">
+                        <Link
+                          to=""
+                          className="inline-flex items-center px-5 py-2.5 mb-2 ml-2 font-medium text-center text-base text-white border border-blue-700 rounded-lg hover:text-primary bg-primary hover:bg-transparent"
+                        >
+                          BID NOW
+                        </Link>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </motion.div>
+            ))}
+          </TabPanel>
+          <TabPanel>
+            {isLoading && <div>Loading...</div>}
+            {isError && <div>Error fetching data</div>}
+
+            {graphicCategories?.map((web) => (
+              <motion.div
+                whileHover="hover"
+                variants={{ hover: { scale: 1.05 } }}
+                transition={{ duration: 0.9, ease: "backInOut" }}
+                className="relative px-4 py-4 my-12 overflow-x-auto shadow-lg sm:rounded-lg"
+                key={web._id}
+              >
+                <table className="text-left text-gray-500 lg:w-full w-[1040px] ">
+                  <tbody className="p">
+                    <tr className="text-left bg-white ">
+                      <td className="px-6 py-4 border-r-2">
+                        <div className="text-lg ">
+                          {/* {web.Date_posted}
+                          {
+                            (formatDistance(
+                              parseISO(web.Date_posted, new Date())
+                            ),
+                            new Date())
+                          }{" "} */}
+                          {formatDistanceStrict(
+                            parseISO(web.Date_posted, new Date()),
+                            baseDate
+                          )}{" "}
+                          ago
+                        </div>
+                      </td>
+                      <td className="py-5 pl-3">
+                        <img src={web.img} alt="" className="w-14" />
+                      </td>
+                      <td className="px-6 py-4">
+                        <div>
+                          <h3 className="text-xl font-medium text-black">
+                            {web.Job_title}
+                          </h3>
+                          <p className="text-base font-normal">{web.Company}</p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 text-left text-black">
+                        <div className="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="#5f63ff"
+                            className="w-5 h-5 mr-2"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
+                            />
+                          </svg>
+                          <p className="text-lg">{web.Price_range} / month</p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="#5f63ff"
+                            className="w-5 h-5 mr-2"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <p className="text-lg font-normal text-black">
+                            {web.Location}
+                          </p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 ">
+                        <div className="text-lg text-center text-white bg-gray-400 ">
+                          {web.Experience_level}
+                        </div>
+                      </td>
+                      <td className="py-4 text-end">
+                        <Link
+                          to=""
+                          className="inline-flex items-center px-5 py-2.5 mb-2 ml-2 font-medium text-center text-base text-white border border-blue-700 rounded-lg hover:text-primary bg-primary hover:bg-transparent"
+                        >
+                          BID NOW
+                        </Link>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </motion.div>
             ))}
           </TabPanel>
         </Tabs>
