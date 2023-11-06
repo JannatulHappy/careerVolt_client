@@ -61,7 +61,7 @@ const Header = () => {
   );
   return (
     <div className="py-3 border-b border-white shadow-xl bg-secondary">
-      <div className="mx-auto text-white navbar max-w-[1400px] px-5">
+      <div className="px-5 mx-auto text-white navbar max-w-7xl">
         <div className="flex-1">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -11,6 +11,9 @@ export default {
         secondary: "#1d1d36",
      
       },
+      maxWidth: {
+        "7xl":"1380px"
+      }
     },
   },
   plugins: [require("daisyui")],
