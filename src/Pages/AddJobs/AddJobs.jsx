@@ -24,7 +24,7 @@ const AddJobs = () => {
     // const form = e.target;
 
     const form = new FormData(e.currentTarget);
-    const jobTitle = form.get("Job_title");
+    const Job_title = form.get("Job_title");
     const Job_poster_email = user.email;
     const Location = form.get("Location");
     const Employment_type = form.get("Employment_type");
@@ -58,15 +58,16 @@ const AddJobs = () => {
       setDateError("");
     }
     const job = {
-      jobTitle,
+      Job_title,
       Deadline: result,
-      
+
       Short_description,
       Category,
       Description,
       Location,
       img,
-      minPrice,maxPrice,
+      minPrice,
+      maxPrice,
       Company,
       Requirements,
       Experience_level,
