@@ -28,7 +28,7 @@ const Header = () => {
           <summary className="hover:text-primary">FOR candidates</summary>
           <ul className="p-2 text-black">
             <li>
-              <a>Submenu 1</a>
+              <Link to="/candidate/myBids">My Bids</Link>
             </li>
             <li>
               <a>Submenu 2</a>
@@ -54,11 +54,11 @@ const Header = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                Post a job
+                Post Job
               </Link>
             </li>
             <li>
-              <a>Submenu 2</a>
+              <Link to="/employer/myPostedJobs">Posted Jobs</Link>
             </li>
           </ul>
         </details>

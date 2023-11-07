@@ -4,11 +4,14 @@ import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import { lightFormat } from "date-fns";
 import { API_BASE_URL } from "../../api/api";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const PlaceBidForm = ({ data }) => {
   const { user } = useContext(AuthContext);
 const [overDeadline,setOverDeadline]=useState("")
   const [dateError, setDateError] = useState("");
+  const goTo = useNavigate();
   const mutation = useMutation({
     mutationFn: (placeBid) => {
       console.log(placeBid);
@@ -62,6 +65,27 @@ const [overDeadline,setOverDeadline]=useState("")
     console.log(placeBid);
     mutation.mutate(placeBid);
   };
+  
+  mutation.isError
+    ? Swal.fire({
+        icon: "error",
+        title: "Failed to add the product.",
+      text: error,
+           
+      })
+    : null;
+
+  mutation.isSuccess
+    ? Swal.fire(
+        "bid Added Successfully!",
+        "See Your Requested Bid!",
+
+      "success"
+          
+    )
+    
+    : null;
+  mutation.isSuccess && goTo("/candidate/myBids",{ replace: true });
   return (
     <form onSubmit={onSubmit} className="text-black mt-9 space-y-">
       <div className="mb-4">

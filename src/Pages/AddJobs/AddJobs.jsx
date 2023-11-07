@@ -5,12 +5,14 @@ import axios from "axios";
 import { lightFormat } from "date-fns";
 import { API_BASE_URL } from "../../api/api";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddJobs = () => {
   const [dateError, setDateError] = useState("");
 
   const { user } = useContext(AuthContext);
-
+  const goTo = useNavigate();
   const mutation = useMutation({
     mutationFn: (job) => {
       console.log(job);
@@ -31,7 +33,7 @@ const AddJobs = () => {
     const Date_posted = new Date();
     const Deadline = form.get("Deadline");
     const Category = form.get("Category");
-    const Price_range = form.get("Price_range");
+   
     const Short_description = form.get("Short_description");
     const Benefits = form.get("Benefits");
     const Description = form.get("Description");
@@ -40,6 +42,8 @@ const AddJobs = () => {
     const Website = form.get("Website");
     const Contact_email = form.get("Contact_email");
     const img = form.get("img");
+    const minPrice = form.get("minPrice");
+    const maxPrice = form.get("maxPrice");
 
     const result = lightFormat(new Date(Deadline), "yyyy-MM-dd");
     // Get the current date
@@ -56,11 +60,13 @@ const AddJobs = () => {
     const job = {
       jobTitle,
       Deadline: result,
-      Price_range,
+      
       Short_description,
       Category,
       Description,
-     Location,img,
+      Location,
+      img,
+      minPrice,maxPrice,
       Company,
       Requirements,
       Experience_level,
@@ -75,6 +81,24 @@ const AddJobs = () => {
     console.log(job);
     mutation.mutate(job);
   };
+
+  mutation.isError
+    ? Swal.fire({
+        icon: "error",
+        title: "Failed to add the product.",
+        text: error,
+      })
+    : null;
+
+  mutation.isSuccess
+    ? Swal.fire(
+        "Job Added Successfully!",
+        "See Your Posted Job!",
+
+        "success"
+      )
+    : null;
+  mutation.isSuccess && goTo("/employer/myPostedJobs", { replace: true });
 
   return (
     <div className="bg-white ">
@@ -130,6 +154,7 @@ const AddJobs = () => {
                 </label>
 
                 <select
+                  required
                   name="Employment_type"
                   id="Employment_type"
                   className="block w-full px-4 py-4 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
@@ -223,6 +248,7 @@ const AddJobs = () => {
                 </label>
 
                 <select
+                  required
                   name="Category"
                   id="Category"
                   className="block w-full px-4 py-4 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
@@ -247,16 +273,31 @@ const AddJobs = () => {
               </div>
               <div className="w-full md:w-1/2">
                 <label className="label">
-                  <span className="text-base label-text">Price range</span>
+                  <span className="text-base label-text">Salary range</span>
                 </label>
-                <input
-                  type="text"
-                  id="Price_range"
-                  name="Price_range"
-                  required
-                  placeholder="$250 - $500"
-                  className="w-full px-3 py-4 border rounded-md"
-                />
+
+                <div className="flex gap-2">
+                  <div className="w-full md:w-1/2">
+                    <input
+                      type="number"
+                      id="minPrice"
+                      name="minPrice"
+                      required
+                      placeholder="Min Salary"
+                      className="w-full px-3 py-4 border rounded-md"
+                    />
+                  </div>
+                  <div className="w-full md:w-1/2">
+                    <input
+                      type="number"
+                      id="maxPrice"
+                      name="maxPrice"
+                      required
+                      placeholder="Max Salary"
+                      className="w-full px-3 py-4 border rounded-md"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 

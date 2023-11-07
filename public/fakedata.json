@@ -4,7 +4,8 @@
   {
     "Job_title": "Software Engineer",
     "Deadline": "2024-03-15",
-    "Price_range": "$600 - $900",
+    "minPrice": 1500,
+  "maxPrice": 1800,
     "Short_description": "We are seeking a skilled software engineer to join our team and work on innovative software projects.",
     "img": "https://i.ibb.co/yhnbSGy/company-1-52x52.png",
     "Category": "Web Development",
@@ -24,7 +25,9 @@
   {
     "Job_title": "Content Writer",
     "Deadline": "2024-04-30",
-    "Price_range": "$250 - $450",
+    "minPrice": 700,
+    "maxPrice": 900,
+   
     "Short_description": "We are looking for a creative content writer to produce engaging and informative content for our blog and website.",
     "Category": "Digital Marketing",
     "img": "https://i.ibb.co/J3Nh3rX/company-2-53x46.png",
@@ -44,7 +47,9 @@
   {
     "Job_title": "UI/UX Designer",
     "Deadline": "2024-05-31",
-    "Price_range": "$300 - $600",
+    "minPrice": 600,
+    "maxPrice": 800,
+   
     "img": "https://i.ibb.co/4FJXjYy/company-3-42x42.png",
     "Short_description": "We are in need of a talented UI/UX designer to create intuitive and user-friendly interfaces for our applications.",
     "Category": "Graphics Design",
@@ -64,8 +69,10 @@
   {
     "Job_title": "Data Analyst",
     "Deadline": "2024-06-30",
-    "Price_range": "$400 - $700",
+    "minPrice": 500,
+    "maxPrice": 600,
     "Short_description": "We are hiring a data analyst to help us make data-driven decisions and improve business processes.",
+   
     "Category": "Web Development",
     "img": "https://i.ibb.co/fxxMwv1/company-5-52x52.png.png",
     "Description": "Our company is seeking a data analyst to gather, analyze, and interpret data to support decision-making. The ideal candidate should be proficient in data analysis tools, have strong problem-solving skills, and a keen eye for detail. Join our team to work with data and drive business improvements.",
@@ -84,8 +91,10 @@
   {
     "Job_title": "Marketing Manager",
     "Deadline": "2024-07-31",
-    "Price_range": "$500 - $800",
+    "minPrice": 600,
+    "maxPrice": 800,
     "img": "https://i.ibb.co/J3Nh3rX/company-2-53x46.png",
+   
     "Short_description": "We are looking for a creative and strategic marketing manager to lead our marketing efforts and drive growth.",
     "Category": "Digital Marketing",
     "Description": "Join our marketing team and take charge of our marketing campaigns. The marketing manager will be responsible for developing and executing marketing strategies, managing the marketing team, and driving business growth. If you have a passion for marketing and a proven track record, we want to hear from you.",
@@ -104,7 +113,8 @@
   {
     "Job_title": "Network Administrator",
     "Deadline": "2024-08-31",
-    "Price_range": "$450 - $750",
+    "minPrice": 500,
+    "maxPrice": 700,
     "img": "https://i.ibb.co/yhnbSGy/company-1-52x52.png",
     "Short_description": "We are seeking a skilled network administrator to maintain and optimize our network infrastructure.",
     "Category": "Web Development",
@@ -123,30 +133,32 @@
   },
 
   {
-    "...Job_title": "Graphic Designer",
-    "..Deadline": "2024-11-30",
-    "..Price range": "$250 - $500",
-    "img": "https://i.ibb.co/fxxMwv1/company-5-52x52.png.png",
-    "..Short_description": "We are looking for a creative graphic designer to create visually appealing designs for various marketing materials.",
-    "..Category": "Graphics Design",
-    "...Description": "Join our design team and be responsible for creating eye-catching visual content. The graphic designer should have strong design skills, proficiency in design software, and the ability to produce compelling visuals. If you're a creative designer, we'd like to see your portfolio.",
-    "..Location": "San Francisco, CA",
-    "...Company": "ArtisticVisions Studio",
-    "..Requirements": "Adobe Creative Suite, Graphic Design, Illustration",
-    "...Experience_level": "Entry-Level",
-    "...Employment_type": "Full-Time",
-    "B...enefits": "Competitive salary, Creative freedom, Health benefits",
-    "Contact_email": "design@artisticvisions.com",
-    "...Posted_by": "Melissa Parker",
-    "...Date_posted": "2023-12-25",
-    "..Website": "https://www.artisticvisions.com",
-    "...Job_poster_email": "melissa.parker@example.com"
+    "Job_title": "Web Developer",
+    "Deadline": "2023-12-15",
+    "minPrice": 1500,
+    "maxPrice": 1800,
+    "img": "https://i.ibb.co/rcWPbYd/company-4-40x43.png",
+    "Short_description": "Looking for an experienced web developer to build a modern and responsive website for our business. Must have strong HTML, CSS, and JavaScript skills.",
+    "Category": "Web Development",
+    "Description": "We are seeking a web developer to create a dynamic website that showcases our products and services. The ideal candidate will have a strong portfolio and the ability to design and develop a visually appealing website. This project requires attention to detail and creativity. The website should be user-friendly and responsive across all devices.",
+    "Location": "New York, NY",
+    "Company": "Tech Solutions Inc.",
+    "Requirements": "HTML, CSS, JavaScript, React",
+    "Experience_level": "Mid-Level",
+    "Employment_type": "Full-Time",
+    "Benefits": "Health insurance, Flexible hours, Remote work option",
+    "Contact_email": "hr@techsolutions.com",
+    "Posted by": "John Doe",
+    "Date_posted": "2023-11-01",
+    "Website": "https://www.techsolutions.com",
+    "Job_poster_email": "john.doe@example.com"
   },
 
   {
     "Job_title": "Web Developer",
     "Deadline": "2023-12-15",
-    "Price_range": "$500 - $800",
+    "minPrice": 1200,
+    "maxPrice": 1400,
     "img": "https://i.ibb.co/rcWPbYd/company-4-40x43.png",
     "Short_description": "Looking for an experienced web developer to build a modern and responsive website for our business. Must have strong HTML, CSS, and JavaScript skills.",
     "Category": "Web Development",
@@ -166,7 +178,8 @@
   {
     "Job_title": "Digital Marketer",
     "Deadline": "2024-01-30",
-    "Price_range": "$300 - $500",
+    "minPrice": 1100,
+    "maxPrice": 1300,
     "img": "https://i.ibb.co/yhnbSGy/company-1-52x52.png",
     "Short_description": "Looking for a digital marketer to help us promote our brand and products online. Experience with social media, SEO, and email marketing is required.",
     "Category": "Digital Marketing",
@@ -186,7 +199,8 @@
   {
     "Job_title": "Graphic Designer",
     "Deadline": "2024-02-28",
-    "Price_range": "$200 - $400",
+    "minPrice": 1000,
+    "maxPrice": 1200,
     "img": "https://i.ibb.co/J3Nh3rX/company-2-53x46.png",
 
     "Short_description": "We are looking for a creative graphic designer to create stunning visuals and graphics for our website and marketing materials.",
@@ -207,7 +221,8 @@
   {
     "Job_title": "Software Engineer",
     "Deadline": "2024-03-15",
-    "Price_range": "$600 - $900",
+    "minPrice": 900,
+    "maxPrice": 1000,
     "Short_description": "We are seeking a skilled software engineer to join our team and work on innovative software projects.",
     "Category": "Web Development",
     "img": "https://i.ibb.co/4FJXjYy/company-3-42x42.png",
@@ -228,7 +243,8 @@
   {
     "Job_title": "Content Writer",
     "Deadline": "2024-04-30",
-    "Price_range": "$250 - $450",
+    "minPrice": 700,
+    "maxPrice": 900,
     "img": "https://i.ibb.co/rcWPbYd/company-4-40x43.png",
 
     "Short_description": "We are looking for a creative content writer to produce engaging and informative content for our blog and website.",
@@ -249,7 +265,8 @@
   {
     "Job_title": "UI/UX Designer",
     "Deadline": "2024-05-31",
-    "Price_range": "$300 - $600",
+    "minPrice": 1700,
+    "maxPrice":1800,
     "img": "https://i.ibb.co/fxxMwv1/company-5-52x52.png.png",
 
     "Short_description": "We are in need of a talented UI/UX designer to create intuitive and user-friendly interfaces for our applications.",
@@ -271,7 +288,8 @@
   {
     "Job_title": "Data Analyst",
     "Deadline": "2024-06-30",
-    "Price_range": "$400 - $700",
+    "minPrice": 1200,
+    "maxPrice": 1400,
     "img": "https://i.ibb.co/rcWPbYd/company-4-40x43.png",
     "Short_description": "We are hiring a data analyst to help us make data-driven decisions and improve business processes.",
     "Category": "Web Development",
@@ -291,7 +309,8 @@
   {
     "Job_title": "Social Media Manager",
     "Deadline": "2024-07-15",
-    "Price_range": "$350 - $600",
+    "minPrice": 1000,
+    "maxPrice": 1200,
     "img": "https://i.ibb.co/rcWPbYd/company-4-40x43.png",
     "Short_description": "We are looking for a social media manager to oversee and enhance our social media presence.",
     "Category": "Digital Marketing",
@@ -311,7 +330,8 @@
   {
     "Job_title": "Mobile App Developer",
     "Deadline": "2024-08-31",
-    "Price_range": "$600 - $1000",
+    "minPrice": 400,
+    "maxPrice": 800,
     "Short_description": "We are seeking a mobile app developer to create innovative and user-friendly mobile applications.",
     "Category": "Web Development",
     "Description": "We need a talented mobile app developer to design and develop mobile applications for Android and iOS. The candidate should have expertise in mobile app development, be familiar with relevant technologies, and have a strong creative flair. Join our team to craft amazing mobile experiences.",
@@ -330,7 +350,8 @@
   {
     "Job_title": "Video Editor",
     "Deadline": "2024-09-15",
-    "Price_range": "$250 - $500",
+    "minPrice": 1200,
+    "maxPrice": 1400,
     "img": "https://i.ibb.co/yhnbSGy/company-1-52x52.png",
     "Short_description": "We are looking for a video editor to create engaging video content for our online channels.",
     "Category": "Graphics Design",
@@ -350,7 +371,8 @@
   {
     "Job_title": "Database Administrator",
     "Deadline": "2024-10-30",
-    "Price_range": "$500 - $800",
+    "minPrice": 1500,
+    "maxPrice": 1700,
     "Short_description": "We are hiring a database administrator to manage and optimize our data systems.",
     "Category": "Web Development",
     "Description": "Our company is looking for an experienced database administrator to handle our data management and optimization. The ideal candidate should be well-versed in database technologies, have strong problem-solving skills, and ensure data security. Join our team to manage our valuable data assets.",
@@ -370,7 +392,8 @@
   {
     "Job_title": "Digital Illustrator",
     "Deadline": "2024-11-30",
-    "Price_range": "$300 - $600",
+    "minPrice": 500,
+    "maxPrice": 800,
     "Short_description": "We are seeking a talented digital illustrator to create captivating digital artwork.",
     "Category": "Graphics Design",
     "Description": "Join our team as a digital illustrator and help us produce stunning digital artwork. The candidate should be proficient in digital art tools, have a strong creative vision, and be able to create unique and eye-catching illustrations. This role offers the chance to showcase your artistic skills.",
@@ -390,7 +413,8 @@
   {
     "Job_title": "Frontend Developer",
     "Deadline": "2025-01-15",
-    "Price_range": "$500 - $800",
+    "minPrice": 500,
+    "maxPrice": 800,
     "img": "https://i.ibb.co/J3Nh3rX/company-2-53x46.png",
     "Short_description": "We are looking for a frontend developer to create visually appealing and responsive web interfaces.",
     "Category": "Web Development",
