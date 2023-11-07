@@ -63,77 +63,80 @@ const [overDeadline,setOverDeadline]=useState("")
     mutation.mutate(placeBid);
   };
   return (
-    <div>
-      <form onSubmit={onSubmit} className="text-black mt-9 space-y-">
-        <div className="mb-4">
-          <input
-            type="number"
-            id="Price_range"
-            name="Price_range"
-            required
-            className="w-full px-3 py-2 border rounded-md"
-            placeholder="Enter Your Bidding Amount"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="date"
-            id="candidate_Deadline"
-            name="candidate_Deadline"
-            className="w-full px-3 py-2 border rounded-md"
-            required
-            placeholder="Enter Your Deadline"
-          />
-        </div>
-        {dateError && <p className="text-red-700">{dateError}</p>}
+    <form onSubmit={onSubmit} className="text-black mt-9 space-y-">
+      <div className="mb-4">
+        <input
+          type="number"
+          id="Price_range"
+          name="Price_range"
+          required
+          className="w-full px-3 py-2 border rounded-md"
+          placeholder="Enter Your Bidding Amount"
+        />
+      </div>
+      <div className="mb-4">
+        <input
+          type="date"
+          id="candidate_Deadline"
+          name="candidate_Deadline"
+          className="w-full px-3 py-2 border rounded-md"
+          required
+          placeholder="Enter Your Deadline"
+        />
+      </div>
+     
+      {dateError && <p className="text-red-700">{dateError}</p>}
 
-        <div className="mb-4">
-          <input
-            required
-            type="email"
-            id="Candidate_email"
-            name="Candidate_email"
-            className="w-full px-3 py-2 border rounded-md"
-            placeholder="Enter your email"
-          />
-        </div>
-        <div className="mb-6">
-          <input
-            type="email"
-            id="email"
-            name="Job_poster_email"
-            value={user?.email}
-            readOnly
-            className="w-full px-3 py-2 border rounded-md"
-          />
-        </div>
-        {overDeadline && <p className="text-base font-medium text-red-700">Deadline is Over for Apply! Try in Another Job</p>}
-        {user?.email === data?.Job_poster_email ? (
-          <button
-            type="submit"
-            className="w-full px-4 py-2 text-lg font-medium text-white bg-gray-300 rounded-md"
-            disabled
-          >
-            PLACE YOUR BID
-          </button>
-        ) : overDeadline ? (
-          <button
-            type="submit"
-            className="w-full px-4 py-2 text-lg font-medium text-white bg-gray-300 rounded-md"
-            disabled
-          >
-            PLACE YOUR BID
-          </button>
-        ) : (
-          <button
-            type="submit"
-            className="w-full px-4 py-2 text-lg font-medium text-white rounded-md bg-primary"
-          >
-            PLACE YOUR BID
-          </button>
-        )}
-      </form>
-    </div>
+      <div className="mb-4">
+        <input
+          required
+          type="email"
+          id="Candidate_email"
+          name="Candidate_email"
+          className="w-full px-3 py-2 border rounded-md"
+          placeholder="Enter your email"
+        />
+      </div>
+      <div className="mb-6">
+        <input
+          type="email"
+          id="email"
+          name="Job_poster_email"
+          value={user?.email}
+          readOnly
+          className="w-full px-3 py-2 border rounded-md"
+        />
+      </div>
+      {overDeadline && (
+        <p className="text-base font-medium text-red-700">
+          Deadline is Over for Apply! Try in Another Job
+        </p>
+      )}
+      {user?.email === data?.Job_poster_email ? (
+        <button
+          type="submit"
+          className="w-full px-4 py-2 text-lg font-medium text-white bg-gray-300 rounded-md"
+          disabled
+        >
+          PLACE YOUR BID
+        </button>
+      ) : overDeadline ? (
+        <button
+          type="submit"
+          className="w-full px-4 py-2 text-lg font-medium text-white bg-gray-300 rounded-md"
+          disabled
+        >
+          PLACE YOUR BID
+        </button>
+      ) : (
+        <button
+          type="submit"
+          className="w-full px-4 py-2 text-lg font-medium text-white rounded-md bg-primary"
+        >
+          PLACE YOUR BID
+        </button>
+      )}
+    </form>
   );
 };
 

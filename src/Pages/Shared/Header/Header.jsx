@@ -23,7 +23,7 @@ const Header = () => {
         </Link>
         {/* <NavLink>Home</NavLink> */}
       </li>
-      <li tabIndex={0}>
+      <li tabIndex={0} className="z-50">
         <details>
           <summary className="hover:text-primary">FOR candidates</summary>
           <ul className="p-2 text-black">
@@ -36,13 +36,12 @@ const Header = () => {
           </ul>
         </details>
       </li>
-      <li tabIndex={1}>
+      <li tabIndex={1} className="z-50">
         <details>
           <summary className="hover:text-primary">FOR employers</summary>
           <ul className="p-2 text-black">
             <li className="text-xs w-52">
-              <a>
-                {" "}
+              <Link to="/user/addJob">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -56,7 +55,7 @@ const Header = () => {
                   />
                 </svg>
                 Post a job
-              </a>
+              </Link>
             </li>
             <li>
               <a>Submenu 2</a>

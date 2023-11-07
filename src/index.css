@@ -5,6 +5,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
 /* Change the dot color */
 .slick-dots li button {
   color: white;

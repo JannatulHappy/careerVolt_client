@@ -80,8 +80,8 @@ const Banner = () => {
             JOBS LISTING
           </button>
         </div>
-        <div className="relative w-11/12 border lg:w-9/12 border-3-primary">
-          <div className="relative border border-3-red-900">
+        <div className="w-11/12 border lg:w-9/12 border-3-primary">
+          <div className="border  border-3-red-900">
             <Slider {...settings} className="relative border border-3-primary">
               <div className="absolute flex items-center justify-center bottom-1 hover:border-none">
                 <img width={400} src={bannerImg01} alt="" />

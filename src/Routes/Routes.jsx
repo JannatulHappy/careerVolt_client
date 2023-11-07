@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         //   fetch(`http://localhost:5000/api/v1/user/singleJob/${params.id}`),
       },
       {
-        path: "/AddJobs",
+        path: "/user/addJob",
         element: <AddJobs />,
       },
 

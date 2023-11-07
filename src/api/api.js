@@ -11,3 +11,4 @@ export const fetchSingleJob = async (id) => {
   const response = await axios.get(`${API_BASE_URL}/user/jobs/${id}`);
   return response.data;
 };
+

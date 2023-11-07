@@ -55,22 +55,11 @@ const AddJobs = () => {
     }
     const job = {
       jobTitle,
-      Deadline: result,
+      jobPostedDate,
+      companyName,
+      companyLocation,
       Price_range,
-      Short_description,
-      Category,
-      Description,
-     Location,img,
-      Company,
-      Requirements,
-      Experience_level,
-      Employment_type,
-      Benefits,
-      Contact_email,
-      Posted_by,
-      Job_poster_email,
-      Date_posted,
-      Website,
+      // Deadline: result,
     };
     console.log(job);
     mutation.mutate(job);
@@ -92,7 +81,7 @@ const AddJobs = () => {
           </div>
         </div>
         <div className="px-5 py-5 mx-auto my-10 bg-gray-100 rounded-lg max-w-7xl">
-          <form onSubmit={onSubmit} className="px-5 my-10 space-y-3 text-black">
+          <form onSubmit={onSubmit} className="px-5 mt-5 space-y-3 text-black">
             <h2 className="text-3xl pb-7">General Information</h2>
             <div className="flex flex-col justify-between gap-6 md:flex-row">
               <div className="w-full md:w-1/2">
@@ -132,7 +121,7 @@ const AddJobs = () => {
                 <select
                   name="Employment_type"
                   id="Employment_type"
-                  className="block w-full px-4 py-4 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
+                  class="block w-full px-4 py-4 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
                 >
                   <option disabled selected>
                     Select Job Type
@@ -184,7 +173,7 @@ const AddJobs = () => {
                 <select
                   name="Experience_level"
                   id="Experience_level"
-                  className="block w-full px-4 py-4 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
+                  class="block w-full px-4 py-4 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
                 >
                   <option disabled selected>
                     Select Experience Level
@@ -225,7 +214,7 @@ const AddJobs = () => {
                 <select
                   name="Category"
                   id="Category"
-                  className="block w-full px-4 py-4 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
+                  class="block w-full px-4 py-4 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
                 >
                   <option disabled selected>
                     Select Category
@@ -274,20 +263,20 @@ const AddJobs = () => {
                 ></textarea>
               </div>
               <div className="w-full mt-2 md:w-1/2">
-                <label for="message" className="text-base">
+                <label for="message" class="text-base">
                   Benefits
                 </label>
                 <textarea
                   id="Benefits"
                   name="Benefits"
                   rows="4"
-                  className="block mt-2 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
+                  class="block mt-2 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                   placeholder="Write  Candidate Benefits here.."
                 ></textarea>
               </div>
             </div>
             <div className="mt-3">
-              <label for="message" className="block my-2 ">
+              <label for="message" class="block my-2 ">
                 Requirements
               </label>
               <textarea
@@ -299,7 +288,7 @@ const AddJobs = () => {
               ></textarea>
             </div>
             <div className="mt-3">
-              <label for="message" className="block my-2 ">
+              <label for="message" class="block my-2 ">
                 Description
               </label>
               <textarea

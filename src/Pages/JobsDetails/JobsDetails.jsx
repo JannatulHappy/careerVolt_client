@@ -24,8 +24,6 @@ const JobsDetails = () => {
     return <span className="text-white">Error: {error.message}</span>;
   }
 
-
-
   return (
     <div className="bg-white ">
       <div className="flex flex-col items-center justify-center h-[300px] ">
@@ -48,7 +46,7 @@ const JobsDetails = () => {
         {data.Job_poster_email} {data.Deadline}
         {data.Date_posted}
         <div className="flex flex-col items-start gap-6 mt-16 lg:flex-row">
-          <table className="w-full text-left text-gray-500 xl:w-8/12">
+          <table className="w-full text-left text-gray-500 lg:w-8/12">
             <tbody className="p">
               <tr className="text-left bg-white ">
                 <td className="py-5 pl-3">
@@ -107,15 +105,14 @@ const JobsDetails = () => {
               </tr>
             </tbody>
           </table>
-          <div>
-            <div className="w-8/12 px-6 py-5 mx-auto bg-gray-100 rounded-lg xl:w-4/12">
-              <h1 className="mt-4 text-xl font-medium text-center text-primary ">
-                Place Your Bid in {data.Company}
-                {/* Contact {data.Company} */}
-              </h1>
 
-              <PlaceBidForm data={data}></PlaceBidForm>
-            </div>
+          <div className="w-full px-6 py-5 mx-auto bg-gray-100 rounded-lg sm:w-8/12 lg:w-4/12">
+            <h1 className="mt-4 text-xl font-medium text-center text-primary ">
+              Place Your Bid in {data.Company}
+              {/* Contact {data.Company} */}
+            </h1>
+
+            <PlaceBidForm data={data}></PlaceBidForm>
           </div>
         </div>
       </div>

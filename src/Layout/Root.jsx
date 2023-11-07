@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const Root = () => {
   return (
-    <div className="box-border p-0 m-0 overflow-hidden bg-secondary font-openSans">
+    <div className="p-0 m-0 font-openSans">
           <Header></Header>
           <Outlet></Outlet>
     </div>
