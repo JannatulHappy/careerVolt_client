@@ -149,7 +149,7 @@ const baseDate=new Date()
                 key={web._id}
               >
                 <table className="text-left text-gray-500 lg:w-full w-[1040px] ">
-                  <tbody className="p">
+                  <tbody className="">
                     <tr className="text-left bg-white ">
                       <td className="px-6 py-4 border-r-2">
                         <div className="text-lg ">

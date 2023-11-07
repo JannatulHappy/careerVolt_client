@@ -50,10 +50,10 @@ const Banner = () => {
   };
   return (
     <div className="bg-secondary mb-[-7px]">
-      <div className="flex flex-col items-center justify-center px-5 mx-auto text-white max-w-7xl md:flex-row">
-        <div className="w-3/12">
+      <div className="flex flex-col items-center justify-center px-5 mx-auto text-white max-w-7xl lg:flex-row">
+        <div className="w-10/12 mt-10 mb-10 lg:w-3/12 md:mb-0">
           <motion.h1
-            className="text-5xl leading-snug"
+            className="text-4xl leading-snug sm:text-5xl"
             transition={{ type: "spring", stiffness: 200 }}
             whileHover={{ scale: 1.1, originX: 0 }}
           >
@@ -61,7 +61,7 @@ const Banner = () => {
           </motion.h1>
           <button
             type="button"
-            className="inline-flex items-center px-8 py-5 mt-10 mb-2 ml-2 text-base font-medium text-center text-white border border-blue-700 rounded-lg hover:text-primary bg-primary hover:bg-transparent"
+            className="inline-flex items-center px-8 py-4 mt-10 mb-2 ml-2 text-base font-medium text-center text-white border border-blue-700 rounded-lg sm:py-5 hover:text-primary bg-primary hover:bg-transparent"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,13 +80,13 @@ const Banner = () => {
             JOBS LISTING
           </button>
         </div>
-        <div className="w-9/12">
-          <div>
-            <Slider {...settings}>
-              <div className="flex items-center justify-center mt-12">
-                <img width={500} src={bannerImg01} alt="" />
+        <div className="relative w-11/12 border lg:w-9/12 border-3-primary">
+          <div className="relative border border-3-red-900">
+            <Slider {...settings} className="relative border border-3-primary">
+              <div className="absolute flex items-center justify-center bottom-1 hover:border-none">
+                <img width={400} src={bannerImg01} alt="" />
               </div>
-              <div className="pl-5 mt-20 text-white ">
+              <div className="pl-5 my-16 text-white">
                 <div>
                   <div className="relative flex flex-col items-center w-full p-6 bg-white shadow-md cursor-pointer group hover:bg-primary md:p-8">
                     <div className="flex flex-col items-center text-gray-600 group-hover:text-white">
@@ -216,10 +216,10 @@ const Banner = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-center mt-24">
-                <img width={520} src={bannerImg02} alt="" />
+              <div className="absolute flex items-center justify-center bottom-1 ">
+                <img width={360} src={bannerImg02} alt="" />
               </div>
-              <div className="pl-5 mt-20 text-white ">
+              <div className="pl-5 text-white ">
                 <div>
                   <div className="relative flex flex-col w-full bg-white shadow-md cursor-pointer group hover:bg-primary md:p-12">
                     <div className="flex flex-col text-gray-600 group-hover:text-white">
@@ -349,10 +349,10 @@ const Banner = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-[70px]">
-                <img width={520} className="" src={bannerImg03} alt="" />
+              <div className="absolute bottom-1">
+                <img width={400} className="" src={bannerImg03} alt="" />
               </div>
-              <div className="pl-5 mt-24 text-white ">
+              <div className="pl-5 text-white ">
                 <div>
                   <div className="relative flex flex-col items-center w-full p-6 bg-white shadow-md cursor-pointer group hover:bg-primary md:p-8">
                     <div className="flex flex-col items-center text-gray-600 group-hover:text-white">
