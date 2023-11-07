@@ -24,93 +24,7 @@ const JobsDetails = () => {
     return <span className="text-white">Error: {error.message}</span>;
   }
 
-  //   console.log(data, "data");
-  //   const baseDate = new Date();
-  //   const handleBid = (e) => {
-  //     e.preventDefault();
-  //     // const form = e.target;
 
-  //     const form = new FormData(e.currentTarget);
-  //     const Price_range = form.get("Price_range");
-  //     const candidate_Deadline = form.get("candidate_Deadline");
-  //     const Candidate_email = form.get("Candidate_email");
-  //     const Job_Owner_email = data.Job_poster_email;
-  //     const companyName = data.Company;
-  //     const companyLocation = data.Location;
-  //     const status = "Pending";
-  //     const jobTitle = data.Job_title;
-  //     const jobPostedDate = data.Date_posted;
-  //     const result = lightFormat(new Date(candidate_Deadline), "yyyy-MM-dd");
-  //     // Get the current date
-  //     const currentDate = new Date();
-  //     const result2 = lightFormat(new Date(currentDate), "yyyy-MM-dd");
-  //     // Compare the input date with the current date
-  //     console.log(result, "re", result2);
-  //     if (result < result2) {
-  //       setDateError("The input date is in the past. Enter a Valid Date");
-  //       return;
-  //     } else {
-  //       setDateError("");
-  //     }
-  //     const placeBid = {
-  //       jobTitle,
-  //       jobPostedDate,
-  //       companyName,
-  //       companyLocation,
-  //       Price_range,
-  //       candidate_Deadline: result,
-  //       Candidate_email,
-  //       Job_Owner_email,
-  //       status,
-  //     };
-  //     console.log(placeBid);
-
-  //     };
-  // const mutation = useMutation({
-  //   mutationFn: (formData) => {
-  //     return axios.post(` ${API_BASE_URL}/candidate/bids`, formData);
-  //   },
-  // });
-  // const onSubmit = (event) => {
-  //   event.preventDefault();
-  //   // const form = e.target;
-
-  //   const form = new FormData(event.currentTarget);
-  //   const Price_range = form.get("Price_range");
-  //   const candidate_Deadline = form.get("candidate_Deadline");
-  //   const Candidate_email = form.get("Candidate_email");
-  //   const Job_Owner_email = data.Job_poster_email;
-  //   const companyName = data.Company;
-  //   const companyLocation = data.Location;
-  //   const status = "Pending";
-  //   const jobTitle = data.Job_title;
-  //   const jobPostedDate = data.Date_posted;
-  //   const result = lightFormat(new Date(candidate_Deadline), "yyyy-MM-dd");
-  //   // Get the current date
-  //   const currentDate = new Date();
-  //   const result2 = lightFormat(new Date(currentDate), "yyyy-MM-dd");
-  //   // Compare the input date with the current date
-  //   console.log(result, "re", result2);
-  //   if (result < result2) {
-  //     setDateError("The input date is in the past. Enter a Valid Date");
-  //     return;
-  //   } else {
-  //     setDateError("");
-  //   }
-  //   const placeBid = {
-  //     jobTitle,
-  //     jobPostedDate,
-  //     companyName,
-  //     companyLocation,
-  //     Price_range,
-  //     candidate_Deadline: result,
-  //     Candidate_email,
-  //     Job_Owner_email,
-  //     status,
-  //   };
-  //   console.log(placeBid);
-  //   mutation.mutate(placeBid);
-  // };
 
   return (
     <div className="bg-white ">
@@ -131,7 +45,8 @@ const JobsDetails = () => {
         </div>
       </div>
       <div className="px-5 mx-auto max-w-7xl">
-        {data.Job_poster_email}
+        {data.Job_poster_email} {data.Deadline}
+        {data.Date_posted}
         <div className="flex flex-col items-start gap-6 mt-16 lg:flex-row">
           <table className="w-full text-left text-gray-500 xl:w-8/12">
             <tbody className="p">

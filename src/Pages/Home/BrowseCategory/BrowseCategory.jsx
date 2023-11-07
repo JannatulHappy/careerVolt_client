@@ -151,22 +151,7 @@ const baseDate=new Date()
                 <table className="text-left text-gray-500 lg:w-full w-[1040px] ">
                   <tbody className="">
                     <tr className="text-left bg-white ">
-                      <td className="px-6 py-4 border-r-2">
-                        <div className="text-lg ">
-                          {/* {web.Date_posted}
-                          {
-                            (formatDistance(
-                              parseISO(web.Date_posted, new Date())
-                            ),
-                            new Date())
-                          }{" "} */}
-                          {formatDistanceStrict(
-                            parseISO(web.Date_posted, new Date()),
-                            baseDate
-                          )}{" "}
-                          ago
-                        </div>
-                      </td>
+                     
                       <td className="py-5 pl-3">
                         <img src={web.img} alt="" className="w-14" />
                       </td>

@@ -7,7 +7,7 @@ import { API_BASE_URL } from "../../api/api";
 
 const PlaceBidForm = ({ data }) => {
   const { user } = useContext(AuthContext);
-
+const [overDeadline,setOverDeadline]=useState("")
   const [dateError, setDateError] = useState("");
   const mutation = useMutation({
     mutationFn: (placeBid) => {
@@ -33,8 +33,15 @@ const PlaceBidForm = ({ data }) => {
     // Get the current date
     const currentDate = new Date();
     const result2 = lightFormat(new Date(currentDate), "yyyy-MM-dd");
-    // Compare the input date with the current date
-    console.log(result, "re", result2);
+      // Compare the input date with the current date
+      const jobDeadline = lightFormat(new Date(data.Deadline), "yyyy-MM-dd");
+       if (jobDeadline < result2) {
+         setOverDeadline("disable")
+       return
+       } else {
+           setOverDeadline("")
+       }
+    console.log(jobDeadline, "re", result2, overDeadline);
     if (result < result2) {
       setDateError("The input date is in the past. Enter a Valid Date");
       return;
@@ -77,8 +84,8 @@ const PlaceBidForm = ({ data }) => {
             required
             placeholder="Enter Your Deadline"
           />
-          {dateError && <p className="text-red-700">{dateError}</p>}
         </div>
+        {dateError && <p className="text-red-700">{dateError}</p>}
 
         <div className="mb-4">
           <input
@@ -100,7 +107,16 @@ const PlaceBidForm = ({ data }) => {
             className="w-full px-3 py-2 border rounded-md"
           />
         </div>
+        {overDeadline && <p className="text-base font-medium text-red-700">Deadline is Over for Apply! Try in Another Job</p>}
         {user?.email === data?.Job_poster_email ? (
+          <button
+            type="submit"
+            className="w-full px-4 py-2 text-lg font-medium text-white bg-gray-300 rounded-md"
+            disabled
+          >
+            PLACE YOUR BID
+          </button>
+        ) : overDeadline ? (
           <button
             type="submit"
             className="w-full px-4 py-2 text-lg font-medium text-white bg-gray-300 rounded-md"
