@@ -13,6 +13,7 @@ import {
   deleteUser,
 } from "firebase/auth";
 import { useEffect } from "react";
+import axios from "axios";
 
 export const AuthContext = createContext();
 
@@ -39,17 +40,37 @@ const AuthProvider = ({ children }) => {
     return updateProfile(auth.currentUser, userInfo);
   };
 
- 
-
   const logOut = () => {
     return signOut(auth);
   };
 
   useEffect(() => {
     const unscubscribe = onAuthStateChanged(auth, (currentUser) => {
+      const userEmail = currentUser?.email || user?.email;
+      const loggedUser = { email: userEmail };
       fetch("/user/email");
       setUser(currentUser);
+      console.log("current user", currentUser);
       setLoading(false);
+      // if user exists then issue a token
+      if (currentUser) {
+        axios
+          .post("http://localhost:5000/jwt", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log("token response", res.data);
+          });
+      } else {
+        // remove token after logout
+        axios
+          .post("http://localhost:5000/logout", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log(res.data);
+          });
+      }
     });
     return () => {
       unscubscribe();
@@ -64,7 +85,7 @@ const AuthProvider = ({ children }) => {
     setUser,
     logOut,
     googleSignIn,
-    updateUser
+    updateUser,
   };
 
   return (

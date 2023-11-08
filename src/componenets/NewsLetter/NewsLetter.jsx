@@ -3,7 +3,7 @@ import NewsLetterImg from "../../assets/seminars.jpg"
 export default function Index() {
   return (
     <div>
-      <div className="grid px-4 py-8 mx-auto md:py-12 place-content-center md:px-0 max-w-7xl">
+      <div className="grid px-5 py-8 mx-auto md:py-12 place-content-center max-w-7xl">
         <div
           className="justify-start lg:flex lg:gap-28"
           data-aos="fade-up"
