@@ -55,7 +55,7 @@ const AuthProvider = ({ children }) => {
       // if user exists then issue a token
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", loggedUser, {
+          .post("https://career-volt-server.vercel.app/jwt", loggedUser, {
             withCredentials: true,
           })
           .then((res) => {
@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
       } else {
         // remove token after logout
         axios
-          .post("http://localhost:5000/logout", loggedUser, {
+          .post("https://career-volt-server.vercel.app/logout", loggedUser, {
             withCredentials: true,
           })
           .then((res) => {
