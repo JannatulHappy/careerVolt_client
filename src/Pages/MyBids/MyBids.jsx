@@ -30,64 +30,73 @@ const MyBids = () => {
       <Helmet>
         <title>{`${websiteName} | My Bids`}</title>
       </Helmet>
-      <h2 className="py-10 mb-10 text-3xl font-medium text-center">
-        Your Bid Requests on Projects
-      </h2>
-      <div className="overflow-x-auto">
-        <table className="table table-xs">
-          <thead>
-            <tr className="text-sm">
-              <th></th>
-              <th>Job Title</th>
-              <th> Your Email</th>
-              <th>Price</th>
-              <th>Deadline</th>
-              <th>status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data?.map((job, index) => (
-              <tr key={index}>
-                <th className="text-base">{index + 1}</th>
-                <td className="text-lg font-medium text-primary">
-                  {job.Job_title}
-                </td>
-                <td className="text-sm font-medium text-primary">
-                  {job.Candidate_email}
-                </td>
-                <td className="text-sm font-medium text-primary">
-                  {job.Price_range}
-                </td>
-                <td className="text-sm font-medium text-primary">
-                  {job.candidate_Deadline}
-                </td>
-                {/* <td className="text-base font-medium text-primary">
+      {data.length === 0 ? (
+        <div className="flex items-center justify-center h-screen text-4xl font-bold">
+          {" "}
+          No Bid Requests !!
+        </div>
+      ) : (
+        <>
+          <h2 className="py-10 mb-10 text-3xl font-medium text-center">
+            {user.email} Bids on Projects
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="table table-xs">
+              <thead>
+                <tr className="text-sm">
+                  <th></th>
+                  <th>Job Title</th>
+                  <th> Your Email</th>
+                  <th>Price</th>
+                  <th>Deadline</th>
+                  <th>status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data?.map((job, index) => (
+                  <tr key={index}>
+                    <th className="text-base">{index + 1}</th>
+                    <td className="text-lg font-medium text-primary">
+                      {job.Job_title}
+                    </td>
+                    <td className="text-sm font-medium text-primary">
+                      {job.Candidate_email}
+                    </td>
+                    <td className="text-sm font-medium text-primary">
+                      {job.Price_range}
+                    </td>
+                    <td className="text-sm font-medium text-primary">
+                      {job.candidate_Deadline}
+                    </td>
+                    {/* <td className="text-base font-medium text-primary">
                   {job.status === "Pending"
                     ? "In Progress"
                     : job.status === "Reject"
                     ? "Rejected"
                     : null}
                 </td> */}
-                <td className="text-base font-medium text-primary">
-                  {job.status === "Pending"
-                    ? "Pending"
-                    : job.status === "Rejected"
-                    ? "Rejected"
-                    : job.status === "Completed"
-                    ? "Completed"
-                    : "In Progress"}
-                </td>
-                <td>
-                  {job.status === "In Progress" && (
-                    <Complete status={job.status} id={job._id}></Complete>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                    <td className="text-base font-medium text-primary">
+                      {job.status === "Pending"
+                        ? "Pending"
+                        : job.status === "Rejected"
+                        ? "Rejected"
+                        : job.status === "Completed"
+                        ? "Completed"
+                        : "In Progress"}
+                    </td>
+                    <td>
+                      {job.status === "In Progress" && (
+                        <Complete status={job.status} id={job._id}></Complete>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
     </div>
   );
 };
