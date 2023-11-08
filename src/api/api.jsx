@@ -23,7 +23,7 @@ export const fetchEmployerPostedJob = async (email) => {
   );
   return response.data;
 };
-export const deleteData = async (id) => {
+export const deleteEmployerPostedJob = async (id) => {
   // Perform the data deletion here, for example, make an API request to delete the data.
   // Replace this with your actual data deletion logic.
   const response = await fetch(`${API_BASE_URL}/employer/delete/${id}`, {
@@ -37,3 +37,30 @@ export const deleteData = async (id) => {
   // Return any data you want from the mutation
   return id;
 };
+export async function deleteJob(id) {
+  const response = await fetch(`${API_BASE_URL}/employer/delete/${id}`, {
+    method: "DELETE",
+  });
+  return response.json();
+}
+// const deletePostMutation = useMutation({
+  //   mutationFn: () => {
+  //     Swal.fire({
+  //       title: "Are you sure?",
+  //       text: "You want Delete?",
+  //       icon: "warning",
+  //       showCancelButton: true,
+  //       confirmButtonText: "Delete",
+  //       cancelButtonText: "Cancel",
+  //     }).then((result) => {
+  //       if (result.isConfirmed) {
+  //         deleteJob;
+  //       }
+  //     });
+  //   },
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries({ queryKey: ["EmployerPostedJob"] });
+  //   },
+  // }); // const handleDelete = (id) => {
+  //   deletePostMutation.mutate(id);
+  // };
