@@ -23,20 +23,33 @@ const Header = () => {
         </Link>
         {/* <NavLink>Home</NavLink> */}
       </li>
-      <li tabIndex={0} className="z-50">
+      <li className="z-50">
         <details>
           <summary className="hover:text-primary">FOR candidates</summary>
           <ul className="p-2 text-black">
             <li>
-              <Link to="/candidate/myBids">My Bids</Link>
+              <Link to="/candidate/myBids">
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6 text-secondary"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                My Bids
+              </Link>
             </li>
-            <li>
-              <a>Submenu 2</a>
-            </li>
+           
           </ul>
         </details>
       </li>
-      <li tabIndex={1} className="z-50">
+      <li  className="z-50">
         <details>
           <summary className="hover:text-primary">FOR employers</summary>
           <ul className="p-2 text-black">
@@ -58,7 +71,40 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/employer/myPostedJobs">Posted Jobs</Link>
+              <Link to="/employer/myPostedJobs">
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6 text-secondary"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                Posted Jobs
+              </Link>
+            </li>
+            <li>
+              <Link to="/employer/myBidRequests">
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6 text-secondary"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                Bid Requests
+              </Link>
             </li>
             {/* <li>
               <Link to={`/employer/myPostedJobs/update/:id`}>
@@ -98,7 +144,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 uppercase "
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 uppercase text-black"
             >
               {li}
             </ul>

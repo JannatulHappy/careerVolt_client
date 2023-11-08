@@ -17,7 +17,11 @@ const JobsDetails = () => {
     queryFn: () => fetchSingleJob(params.id),
   });
   if (isLoading) {
-    return <span className="text-white">Loading...</span>;
+    return (
+      <span className="text-white">
+        <progress className="w-56 progress"></progress>
+      </span>
+    );
   }
 
   if (isError) {

@@ -11,6 +11,7 @@ import JobsDetails from "../Pages/JobsDetails/JobsDetails";
 import MyBids from "../Pages/MyBids/MyBids";
 import MyPostedJob from "../Pages/MyPostedJob/MyPostedJob";
 import UpdateJobs from "../Pages/UpdateJobs/UpdateJobs";
+import BidRequests from "../Pages/BidRequests/BidRequests";
 
 
 const router = createBrowserRouter([
@@ -35,19 +36,44 @@ const router = createBrowserRouter([
       },
       {
         path: "/user/addJob",
-        element: <AddJobs />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <AddJobs />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/candidate/myBids",
-        element: <MyBids></MyBids>,
+        element: (
+          <PrivateRoute>
+            <MyBids></MyBids>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/employer/myPostedJobs",
-        element: <MyPostedJob></MyPostedJob>,
+        element: (
+          <PrivateRoute>
+            <MyPostedJob></MyPostedJob>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/employer/myBidRequests",
+        element: (
+          <PrivateRoute>
+            <BidRequests></BidRequests>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/employer/singlePostedJobs/:id",
-        element: <UpdateJobs></UpdateJobs>,
+        element: (
+          <PrivateRoute>
+            <UpdateJobs></UpdateJobs>
+          </PrivateRoute>
+        ),
       },
 
       {

@@ -137,7 +137,11 @@ const baseDate=new Date()
           </TabList>
 
           <TabPanel>
-            {isLoading && <div>Loading...</div>}
+            {isLoading && (
+              <div>
+                <progress className="w-56 progress"></progress>
+              </div>
+            )}
             {isError && <div>Error fetching data</div>}
 
             {webCategories?.map((web) => (
@@ -221,7 +225,11 @@ const baseDate=new Date()
             ))}
           </TabPanel>
           <TabPanel>
-            {isLoading && <div>Loading...</div>}
+            {isLoading && (
+              <div>
+                <progress className="w-56 progress"></progress>
+              </div>
+            )}
             {isError && <div>Error fetching data</div>}
 
             {digitalCategories?.map((web) => (
@@ -321,7 +329,11 @@ const baseDate=new Date()
             ))}
           </TabPanel>
           <TabPanel>
-            {isLoading && <div>Loading...</div>}
+            {isLoading && (
+              <div>
+                <progress className="w-56 progress"></progress>
+              </div>
+            )}
             {isError && <div>Error fetching data</div>}
 
             {graphicCategories?.map((web) => (

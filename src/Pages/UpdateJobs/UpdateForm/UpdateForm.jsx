@@ -10,8 +10,6 @@ import { API_BASE_URL } from "../../../api/api";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const UpdateForm = ({ data }) => {
-  
-
   const [dateError, setDateError] = useState("");
 
   const { user } = useContext(AuthContext);
@@ -34,12 +32,13 @@ const UpdateForm = ({ data }) => {
     const Job_poster_email = user.email;
 
     const Deadline = form.get("Deadline");
-    const Experience_level = form.get("Experience_level") || data.Experience_level
-    const Category = form.get("Category") || data.Category
+    const Experience_level =
+      form.get("Experience_level") || data.Experience_level;
+    const Category = form.get("Category") || data.Category;
 
     const Short_description =
       form.get("Short_description") || data.Short_description;
-const Employment_type = form.get("Employment_type") || data.Employment_type
+    const Employment_type = form.get("Employment_type") || data.Employment_type;
     const minPrice = form.get("minPrice");
     const maxPrice = form.get("maxPrice");
 
@@ -56,12 +55,12 @@ const Employment_type = form.get("Employment_type") || data.Employment_type
       setDateError("");
     }
     const job = {
-      Job_title ,
+      Job_title,
       Deadline: result,
       Experience_level,
       Short_description,
       Category,
-Employment_type,
+      Employment_type,
       minPrice,
       maxPrice,
       Job_poster_email,
@@ -145,13 +144,12 @@ Employment_type,
 
                 <select
                   required
-                 
                   name="Employment_type"
                   id="Employment_type"
                   className="block w-full px-4 py-4 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
                 >
                   <option disabled selected>
-                   Select Job Type
+                    Select Job Type
                   </option>
                   <option className="py-2" value="Full-Time">
                     Full-Time
@@ -202,11 +200,7 @@ Employment_type,
                   id="Experience_level"
                   className="block w-full px-4 py-4 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
                 >
-                  <option
-                  
-                    disabled
-                    selected
-                  >
+                  <option disabled selected>
                     Select Experience Level
                   </option>
                   <option className="py-2" value="Senior">
@@ -232,8 +226,8 @@ Employment_type,
                   id="Category"
                   className="block w-full px-4 py-4 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
                 >
-                  <option disabled selected >
-                   Select Category
+                  <option disabled selected>
+                    Select Category
                   </option>
                   <option className="py-2" value="Web Development">
                     Web Development
@@ -293,7 +287,6 @@ Employment_type,
                   id="Short_description"
                   name="Short_description"
                   rows="4"
-                 
                   className="block p-2.5 w-full mt-2 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                   placeholder="Write Short_description"
                 ></textarea>

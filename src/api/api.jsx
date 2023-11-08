@@ -23,6 +23,13 @@ export const fetchEmployerPostedJob = async (email) => {
   );
   return response.data;
 };
+// bid request from the posted job of logged user
+export const fetchBidRequests = async (email) => {
+  const response = await axios.get(
+    `${API_BASE_URL}/employer/bidRequests/${email}`
+  );
+  return response.data;
+};
 export const deleteEmployerPostedJob = async (id) => {
   // Perform the data deletion here, for example, make an API request to delete the data.
   // Replace this with your actual data deletion logic.

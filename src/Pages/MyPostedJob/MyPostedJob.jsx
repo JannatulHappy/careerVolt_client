@@ -4,9 +4,9 @@
 //     // Update the data in the query cache
 //     queryClient.setQueryData(["EmployerPostedJob", email], updatedData);
 //   };
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import {  useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
-import { deleteJob, fetchEmployerPostedJob } from "../../api/api";
+import {  fetchEmployerPostedJob } from "../../api/api";
 import { AuthContext } from "../../providers/AuthProvider";
 import Delete from "./Delete/Delete";
 import { Link } from "react-router-dom";

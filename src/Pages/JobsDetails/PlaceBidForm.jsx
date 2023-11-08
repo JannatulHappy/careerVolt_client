@@ -30,7 +30,7 @@ const [overDeadline,setOverDeadline]=useState("")
     const companyName = data.Company;
     const companyLocation = data.Location;
     const status = "Pending";
-    const jobTitle = data.Job_title;
+    const Job_title = data.Job_title;
     const jobPostedDate = data.Date_posted;
     const result = lightFormat(new Date(candidate_Deadline), "yyyy-MM-dd");
     // Get the current date
@@ -52,7 +52,7 @@ const [overDeadline,setOverDeadline]=useState("")
       setDateError("");
     }
     const placeBid = {
-      jobTitle,
+     Job_title,
       jobPostedDate,
       companyName,
       companyLocation,

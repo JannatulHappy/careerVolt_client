@@ -51,7 +51,7 @@ const Banner = () => {
   return (
     <div className="bg-secondary mb-[-7px]">
       <div className="flex flex-col items-center justify-center px-5 mx-auto text-white max-w-7xl lg:flex-row">
-        <div className="w-10/12 mt-10 mb-10 lg:w-3/12 md:mb-0">
+        <div className="w-10/12 mt-10 lg:mb-10 lg:w-3/12 md:mb-0">
           <motion.h1
             className="text-4xl leading-snug sm:text-5xl"
             transition={{ type: "spring", stiffness: 200 }}
@@ -80,15 +80,15 @@ const Banner = () => {
             JOBS LISTING
           </button>
         </div>
-        <div className="w-11/12 border lg:w-9/12 border-3-primary">
-          <div className="border  border-3-red-900">
-            <Slider {...settings} className="relative border border-3-primary">
-              <div className="absolute flex items-center justify-center bottom-1 hover:border-none">
-                <img width={400} src={bannerImg01} alt="" />
+        <div className="w-11/12 lg:w-9/12 ">
+          <div className="">
+            <Slider {...settings} className="relative ">
+              <div className="absolute flex items-center justify-center bottom-[6px]">
+                <img className="w-[300px] lg:w-[400px]" src={bannerImg01} alt="" />
               </div>
-              <div className="pl-5 my-16 text-white">
+              <div className="pl-5 text-white lg:my-16">
                 <div>
-                  <div className="relative flex flex-col items-center w-full p-6 bg-white shadow-md cursor-pointer group hover:bg-primary md:p-8">
+                  <div className="relative flex flex-col items-center w-full p-2 bg-white shadow-md cursor-pointer lg:p-6 group hover:bg-primary md:p-8">
                     <div className="flex flex-col items-center text-gray-600 group-hover:text-white">
                       <svg
                         width={70}
@@ -118,7 +118,7 @@ const Banner = () => {
                           </clipPath>
                         </defs>
                       </svg>
-                      <p className="mt-4 text-lg leading-normal text-center xl:w-96">
+                      <p className="mt-4 leading-normal text-center lg:text-lg xl:w-96">
                         When our designs need an expert opinion or approval, I
                         know I can rely on your agency Thank you for all your
                         help-I will be recommending you to everyone
