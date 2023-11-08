@@ -62,7 +62,7 @@ function Login() {
               type="email"
               name="email"
               placeholder="Enter Your Email"
-              className="input input-bordered"
+              className="text-black input input-bordered"
               required
             />
           </div>

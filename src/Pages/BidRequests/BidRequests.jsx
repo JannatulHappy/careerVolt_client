@@ -74,10 +74,10 @@ const BidRequests = () => {
                     <div className="flex justify-between gap-5">
                       <Accept status={job.status} id={job._id}></Accept>
                       
-                      <Reject status={job.status} id={job._id} />
+                      <Reject status={job.status} id={job._id} ></Reject>
                     </div>
                   )}
-                  {job.status === "Reject" && (
+                  {job.status === "Reject"  && (
                     <div className="">
                       <ProgressBar
                         percent={100} // Adjust the progress percentage
