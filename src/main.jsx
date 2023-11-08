@@ -8,24 +8,29 @@ import { RouterProvider } from "react-router-dom";
 import router from "./Routes/Routes";
 import AuthProvider from "./providers/AuthProvider";
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
+ 
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 // Create a client
 const queryClient = new QueryClient();
-
+// Define your website name
+const websiteName = "Career Volt"
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        {" "}
-        <RouterProvider router={router}></RouterProvider>
-      </AuthProvider>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <Helmet>
+            {`${websiteName}`}
+            {/* <link rel="canonical" href="." /> */}
+          </Helmet>
+
+          <RouterProvider router={router}></RouterProvider>
+        </AuthProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );

@@ -4,6 +4,7 @@ import {  fetchMyBids } from "../../api/api";
 import Complete from "./Complete/Complete"
 
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const MyBids = () => {
@@ -20,10 +21,15 @@ const MyBids = () => {
 
   if (isError) {
     return <span>Error: {error.message}</span>;
-  }
+    }
+      const websiteName = "Career Volt";
+  
 
   return (
     <div className="px-5 mx-auto my-10 max-w-7xl">
+      <Helmet>
+        <title>{`${websiteName} | My Bids`}</title>
+      </Helmet>
       <h2 className="py-10 mb-10 text-3xl font-medium text-center">
         Bid Requests On your Project
       </h2>

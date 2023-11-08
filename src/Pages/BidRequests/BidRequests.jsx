@@ -6,6 +6,7 @@ import { ProgressBar, Step } from "react-step-progress-bar";
 import { AuthContext } from "../../providers/AuthProvider";
 import Reject from "./Reject/Reject";
 import Accept from "./Accept/Accept";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -24,9 +25,14 @@ const BidRequests = () => {
   if (isError) {
     return <span>Error: {error.message}</span>;
   }
-
+  const websiteName = "Career Volt";
+   
   return (
     <div className="px-5 mx-auto my-10 max-w-7xl">
+      <Helmet>
+        <title>{`${websiteName} | Bid Requests`}</title>
+      </Helmet>
+      
       <h2 className="py-10 mb-10 text-3xl font-medium text-center">
         Bid Requests On your Project
       </h2>
@@ -73,11 +79,11 @@ const BidRequests = () => {
                   {job.status === "Pending" && (
                     <div className="flex justify-between gap-5">
                       <Accept status={job.status} id={job._id}></Accept>
-                      
-                      <Reject status={job.status} id={job._id} ></Reject>
+
+                      <Reject status={job.status} id={job._id}></Reject>
                     </div>
                   )}
-                  {job.status === "Reject"  && (
+                  {job.status === "Reject" && (
                     <div className="">
                       <ProgressBar
                         percent={100} // Adjust the progress percentage

@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 // import {  lightFormat} from "date-fns";
 // import { AuthContext } from "../../providers/AuthProvider";
 import PlaceBidForm from "./PlaceBidForm";
+import { Helmet } from "react-helmet-async";
 // import axios from "axios";
 
 const JobsDetails = () => {
@@ -27,9 +28,15 @@ const JobsDetails = () => {
   if (isError) {
     return <span className="text-white">Error: {error.message}</span>;
   }
-
+  const websiteName = "Career Volt";
+  
   return (
     <div className="bg-white ">
+      
+      <Helmet>
+        <title>{`${websiteName} | Job Details`}</title>
+      </Helmet>
+      
       <div className="flex flex-col items-center justify-center h-[300px] ">
         <div className="w-full h-[300px] bg-[url('https://i.ibb.co/Qj3RGbV/financial-firms-esg-meeting-event-summit-data.jpg')] bg-cover  bg-no-repeat bg-center ">
           <div className="flex items-center justify-start w-full h-[300px] bg-blue-900/30 backdrop-brightness-75  text-left ">

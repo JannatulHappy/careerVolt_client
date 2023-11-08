@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 function Register() {
   const { createUser, user, setUser, updateUser } = useContext(AuthContext);
@@ -57,9 +58,12 @@ function Register() {
         });
       });
   };
-
+ const websiteName = "Career Volt";
   return (
     <div className="max-w-md p-6 mx-auto">
+      <Helmet>
+        <title>{`${websiteName} | Register`}</title>
+      </Helmet>
       <div className="py-5 text-center">
         <h1 className="text-4xl font-bold text-white">Please Register</h1>
       </div>

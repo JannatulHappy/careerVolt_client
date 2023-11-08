@@ -7,6 +7,7 @@ import { API_BASE_URL } from "../../api/api";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const AddJobs = () => {
   const [dateError, setDateError] = useState("");
@@ -100,9 +101,15 @@ const AddJobs = () => {
       )
     : null;
   mutation.isSuccess && goTo("/employer/myPostedJobs", { replace: true });
-
+  const websiteName = "Career Volt";
+ 
   return (
     <div className="bg-white ">
+     
+      <Helmet>
+        <title>{`${websiteName} | Add Job`}</title>
+      </Helmet>
+      
       <div className="w-full h-[300px] bg-[url('https://i.ibb.co/Qj3RGbV/financial-firms-esg-meeting-event-summit-data.jpg')] bg-cover  bg-no-repeat bg-center ">
         <div className="flex items-center justify-start w-full h-[300px] bg-blue-900/30 backdrop-brightness-75  text-left ">
           <div className="px-5 mx-auto max-w-7xl">

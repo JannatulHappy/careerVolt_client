@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetchSinglePostedJob } from "../../api/api";
 import { useQuery } from '@tanstack/react-query';
 import UpdateForm from "./UpdateForm/UpdateForm"
+import { Helmet } from 'react-helmet-async';
 const UpdateJobs = () => {
   // const { user } = useContext(AuthContext);
   const params = useParams();
@@ -20,11 +21,16 @@ const UpdateJobs = () => {
       return <span className="text-white">Error: {error.message}</span>;
       
     }
-    console.log(data, params.id);
-    return <div className="text-black">
-
+  console.log(data, params.id);
+  const websiteName = "Career Volt";
+    return (
+      <div className="text-black">
+        <Helmet>
+          <title>{`${websiteName} | Update Form`}</title>
+        </Helmet>
         <UpdateForm id={data._id} data={data}></UpdateForm>
-    </div>;
+      </div>
+    );
 };
 
 export default UpdateJobs;

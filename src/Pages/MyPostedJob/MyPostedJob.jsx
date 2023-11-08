@@ -10,6 +10,7 @@ import {  fetchEmployerPostedJob } from "../../api/api";
 import { AuthContext } from "../../providers/AuthProvider";
 import Delete from "./Delete/Delete";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const MyPostedJob = () => {
   // const queryClient = useQueryClient();
@@ -45,8 +46,12 @@ const MyPostedJob = () => {
   //   deletePostMutation.mutate(id);
   // };
   console.log(data);
+    const websiteName = "Career Volt";
   return (
     <div className="px-5 mx-auto my-10 max-w-7xl">
+      <Helmet>
+        <title>{`${websiteName} | Posted Jobs`}</title>
+      </Helmet>
       <h2 className="py-10 mb-10 text-3xl font-medium text-center">
         {user.displayName}'s Posted Job
       </h2>

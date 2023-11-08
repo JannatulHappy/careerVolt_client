@@ -1,9 +1,15 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
+    const websiteName = "Career Volt";
   return (
     <div className="">
+      <Helmet>
+        <title>{`${websiteName} | Error Page`}</title>
+      </Helmet>
+      
       <div className="flex items-center justify-center py-12">
         <div className="flex items-center justify-center mx-4 border rounded-md md:w-2/3 ">
           <div className="flex flex-col items-center py-16 ">

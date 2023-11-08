@@ -46,6 +46,7 @@ function Login() {
         console.error(error);
       });
   };
+    const websiteName = "Career Volt";
   return (
     <div className="px-5 py-10">
       <div className="py-5 text-center">
