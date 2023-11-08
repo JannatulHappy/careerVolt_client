@@ -2,9 +2,9 @@ import React from 'react';
 import logo from "../../../assets/logo-inverse.svg";
 const Footer = () => {
   return (
-    <div>
+    <div className=''>
       <footer
-        className="px-4 mt-16 text-white divide-y bg-secondary "
+        className="px-4 text-white divide-y bg-secondary "
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"

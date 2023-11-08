@@ -31,7 +31,7 @@ const MyBids = () => {
         <title>{`${websiteName} | My Bids`}</title>
       </Helmet>
       <h2 className="py-10 mb-10 text-3xl font-medium text-center">
-        Bid Requests On your Project
+        Your Bid Requests on Projects
       </h2>
       <div className="overflow-x-auto">
         <table className="table table-xs">
