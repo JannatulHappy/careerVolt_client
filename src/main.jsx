@@ -25,7 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <AuthProvider>
           <Helmet>
             {`${websiteName}`}
-            {/* <link rel="canonical" href="." /> */}
+            {/* <link rel="shortcut icon" href="./assets/logo_icon.png" /> */}
           </Helmet>
 
           <RouterProvider router={router}></RouterProvider>

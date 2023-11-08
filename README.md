@@ -4,7 +4,7 @@
 
 This repository contains the code for a full-stack web development project. The project is designed to create a unique online marketplace, and this README provides an overview of the key features.
 
-## Main Requirements
+## About the Project
 
 1. **Home Page**:
 
