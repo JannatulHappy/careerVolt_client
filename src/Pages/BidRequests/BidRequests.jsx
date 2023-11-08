@@ -5,6 +5,7 @@ import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
 import { AuthContext } from "../../providers/AuthProvider";
 import Reject from "./Reject/Reject";
+import Accept from "./Accept/Accept";
 
 
 
@@ -58,17 +59,21 @@ const BidRequests = () => {
                 <td className="text-sm font-medium text-primary">
                   {job.candidate_Deadline}
                 </td>
-                <td className="text-base font-medium text-primary">
+                {/* <td className="text-base font-medium text-primary">
                   {job.status === "Pending"
                     ? "In Progress"
                     : job.status === "Reject"
                     ? "Rejected"
                     : null}
+                </td> */}
+                <td className="text-base font-medium text-primary">
+                  {job.status}
                 </td>
                 <td>
                   {job.status === "Pending" && (
                     <div className="flex justify-between gap-5">
-                      <button className="btn btn-accent">Accept</button>
+                      <Accept status={job.status} id={job._id}></Accept>
+                      
                       <Reject status={job.status} id={job._id} />
                     </div>
                   )}

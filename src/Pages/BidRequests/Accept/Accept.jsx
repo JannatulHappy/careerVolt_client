@@ -3,8 +3,8 @@ import React from "react";
 import { API_BASE_URL } from "../../../api/api";
 import axios from "axios";
 
-const Reject = ({ id }) => {
-    const queryClient = useQueryClient();
+const Accept = ({ id }) => {
+  const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: (newTodo) => {
       console.log(newTodo, id);
@@ -26,22 +26,19 @@ const Reject = ({ id }) => {
           {mutation.isError ? (
             <div>An error occurred: {mutation.error.message}</div>
           ) : null}
-
-         
-
         </>
       )}
 
       <button
         onClick={() => {
-          mutation.mutate({ status: "Reject" });
+          mutation.mutate({ status: "In Progress" });
         }}
-        className="btn btn-warning"
+        className="btn btn-info"
       >
-        Reject
+       Accept
       </button>
     </div>
   );
 };
 
-export default Reject;
+export default Accept;

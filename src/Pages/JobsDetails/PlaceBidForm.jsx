@@ -25,8 +25,8 @@ const [overDeadline,setOverDeadline]=useState("")
     const form = new FormData(e.currentTarget);
     const Price_range = form.get("Price_range");
     const candidate_Deadline = form.get("candidate_Deadline");
-    const Candidate_email = form.get("Candidate_email");
-    const Job_Owner_email = data.Job_poster_email;
+    const Candidate_email = user.email
+    const Job_poster_email = data.Job_poster_email;
     const companyName = data.Company;
     const companyLocation = data.Location;
     const status = "Pending";
@@ -59,7 +59,7 @@ const [overDeadline,setOverDeadline]=useState("")
       Price_range,
       candidate_Deadline: result,
       Candidate_email,
-      Job_Owner_email,
+     Job_poster_email,
       status,
     };
     console.log(placeBid);
@@ -107,11 +107,14 @@ const [overDeadline,setOverDeadline]=useState("")
           placeholder="Enter Your Deadline"
         />
       </div>
-     
+
       {dateError && <p className="text-red-700">{dateError}</p>}
 
       <div className="mb-4">
         <input
+         
+          value={user?.email}
+          readOnly
           required
           type="email"
           id="Candidate_email"
@@ -120,16 +123,7 @@ const [overDeadline,setOverDeadline]=useState("")
           placeholder="Enter your email"
         />
       </div>
-      <div className="mb-6">
-        <input
-          type="email"
-          id="email"
-          name="Job_poster_email"
-          value={user?.email}
-          readOnly
-          className="w-full px-3 py-2 border rounded-md"
-        />
-      </div>
+     
       {overDeadline && (
         <p className="text-base font-medium text-red-700">
           Deadline is Over for Apply! Try in Another Job
