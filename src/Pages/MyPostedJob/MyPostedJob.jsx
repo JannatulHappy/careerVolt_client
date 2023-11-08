@@ -1,12 +1,10 @@
-
-
 //   const handleDeleteItem = (id) => {
 //     // Remove the deleted item from the data
 //     const updatedData = data.filter((job) => job._id !== id);
 //     // Update the data in the query cache
 //     queryClient.setQueryData(["EmployerPostedJob", email], updatedData);
 //   };
-import { useMutation, useQuery, useQueryClient,  } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import { deleteJob, fetchEmployerPostedJob } from "../../api/api";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -14,7 +12,7 @@ import Delete from "./Delete/Delete";
 import { Link } from "react-router-dom";
 
 const MyPostedJob = () => {
-      // const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
   const { user } = useContext(AuthContext);
   const email = user.email;
   const { isLoading, isError, data, error } = useQuery({
@@ -23,7 +21,7 @@ const MyPostedJob = () => {
   });
 
   if (isLoading) {
-    return <span>Loading...</span>;
+    return <progress className="w-2/6 mx-auto progress"></progress>;
   }
 
   if (isError) {
@@ -55,7 +53,7 @@ const MyPostedJob = () => {
       <div className="overflow-x-auto">
         <table className="table table-xs">
           <thead>
-            <tr>
+            <tr className="text-sm">
               <th></th>
               <th>Job Title</th>
               <th>Category</th>
@@ -70,15 +68,25 @@ const MyPostedJob = () => {
           <tbody>
             {data?.map((job, index) => (
               <tr key={index}>
-                <th>{index + 1}</th>
-                <td>{job.Job_title}</td>
-                <td>{job.Category}</td>
-                <td>{job.Experience_level}</td>
-                <td>{job.Location}</td>
-                <td>
+                <th className="text-base">{index + 1}</th>
+                <td className="text-lg font-medium text-primary">
+                  {job.Job_title}
+                </td>
+                <td className="text-base font-medium text-primary">
+                  {job.Category}
+                </td>
+                <td className="text-sm font-medium text-primary">
+                  {job.Experience_level}
+                </td>
+                <td className="text-sm font-medium text-primary">
+                  {job.Location}
+                </td>
+                <td className="text-base font-medium text-primary">
                   ${job.maxPrice} - ${job.minPrice}
                 </td>
-                <td>{job.Deadline}</td>
+                <td className="text-sm font-medium text-primary">
+                  {job.Deadline}
+                </td>
                 <th>
                   <Link
                     to={`/employer/singlePostedJobs/${job._id}`}

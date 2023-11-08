@@ -20,32 +20,40 @@ const Delete = ({ id }) => {
     swal
       .fire({
         title: "Are you sure?",
-        text: "You want to delete?",
+        text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonText: "Delete",
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+       
         cancelButtonText: "Cancel",
       })
       .then((result) => {
         if (result.isConfirmed) {
           deletePostMutation.mutate(id);
+         
         }
       });
   };
+  {
+    deletePostMutation.isLoading ? (
+      "Deleting..."
+    ) : (
+      <>
+        {deletePostMutation.isError ? (
+          <div>An error occurred: {mutation.error.message}</div>
+        ) : null}
 
+        {deletePostMutation.isSuccess ? (
+          <div className="text-4xl font-bold text-black">Deleted!</div>
+        ) : null}
+      </>
+    );
+  }
   return (
     <div>
-      {deletePostMutation.isLoading ? (
-        "Deleting..."
-      ) : (
-        <>
-          {deletePostMutation.isError ? (
-            <div>An error occurred: {mutation.error.message}</div>
-          ) : null}
-
-          {deletePostMutation.isSuccess ? <div>Deleted!</div> : null}
-        </>
-      )}
+    
 
       <button onClick={handleDelete} className="py-2 btn">
         <svg
