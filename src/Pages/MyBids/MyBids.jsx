@@ -72,7 +72,7 @@ const MyBids = () => {
                 <td className="text-base font-medium text-primary">
                   {job.status === "Pending"
                     ? "Pending"
-                    : job.status === "Reject"
+                    : job.status === "Rejected"
                     ? "Rejected"
                     : job.status === "Completed"
                     ? "Completed"

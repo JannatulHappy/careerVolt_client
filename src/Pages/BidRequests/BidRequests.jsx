@@ -46,10 +46,10 @@ const BidRequests = () => {
               <th>Price</th>
               <th>Deadline</th>
               <th>status</th>
-              <th>Action</th>
+             
             </tr>
           </thead>
-          <tbody>
+          <tbody className="">
             {data?.map((job, index) => (
               <tr key={index}>
                 <th className="text-base">{index + 1}</th>
@@ -72,18 +72,18 @@ const BidRequests = () => {
                     ? "Rejected"
                     : null}
                 </td> */}
-                <td className="text-base font-medium text-primary">
+                <td className="mx-5 text-base font-bold text-primary">
                   {job.status}
                 </td>
                 <td>
                   {job.status === "Pending" && (
-                    <div className="flex justify-between gap-5">
+                    <div className="flex justify-between gap-5 py-2">
                       <Accept status={job.status} id={job._id}></Accept>
 
                       <Reject status={job.status} id={job._id}></Reject>
                     </div>
                   )}
-                  {job.status === "Reject" && (
+                  {job.status === "Rejected"  && (
                     <div className="">
                       <ProgressBar
                         percent={100} // Adjust the progress percentage
@@ -116,6 +116,47 @@ const BidRequests = () => {
                             <img
                               style={{
                                 filter: `grayscale(${accomplished ? 0 : 100}%)`,
+                              }}
+                              src="https://orig00.deviantart.net/493a/f/2017/095/5/4/raichu_icon_by_pokemonshuffle_icons-db4ryym.png" // Customize with your images
+                            />
+                          )}
+                        </Step>
+                      </ProgressBar>
+                    </div>
+                  )}
+                  {job.status === "In Progress"  && (
+                    <div className="">
+                      <ProgressBar
+                        percent={75} // Adjust the progress percentage
+                        filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
+                      >
+                        <Step transition="scale">
+                          {({ accomplished }) => (
+                            <img
+                              style={{
+                                filter: `grayscale(${accomplished ? 0 : 40}%)`,
+                              }}
+                              width="20"
+                              src="https://orig00.deviantart.net/493a/f/2017/095/5/4/raichu_icon_by_pokemonshuffle_icons-db4ryym.png" // Customize with your images
+                            />
+                          )}
+                        </Step>
+                        <Step transition="scale">
+                          {({ accomplished }) => (
+                            <img
+                              style={{
+                                filter: `grayscale(${accomplished ? 0 : 75}%)`,
+                              }}
+                              width="20"
+                              src="https://vignette.wikia.nocookie.net/pkmnshuffle/images/9/97/Pikachu_%28Smiling%29.png/revision/latest?cb=20170410234508" // Customize with your images
+                            />
+                          )}
+                        </Step>
+                        <Step transition="scale">
+                          {({ accomplished }) => (
+                            <img
+                              style={{
+                                filter: `grayscale(${accomplished ? 0 : 80}%)`,
                               }}
                               src="https://orig00.deviantart.net/493a/f/2017/095/5/4/raichu_icon_by_pokemonshuffle_icons-db4ryym.png" // Customize with your images
                             />

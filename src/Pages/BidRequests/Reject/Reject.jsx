@@ -34,7 +34,7 @@ const Reject = ({ id }) => {
 
       <button
         onClick={() => {
-          mutation.mutate({ status: "Reject" });
+          mutation.mutate({ status: "Rejected" });
         }}
         className="btn btn-warning"
       >
