@@ -2,7 +2,10 @@ import React from 'react';
 import Banner from './Banner/Banner';
 import BrowseCategory from './BrowseCategory/BrowseCategory';
 import { Helmet } from 'react-helmet-async';
-
+import NewsLetter from "../../componenets/NewsLetter/NewsLetter"
+import Testimonial from "../../componenets/Testimonial/Testimonial"
+import Stat from '../../componenets/Stat/Stat';
+import Ticket from '../../componenets/Ticket/Ticket';
 const Home = () => {
     const websiteName = "Career Volt";
     return (
@@ -11,7 +14,12 @@ const Home = () => {
           <title>{`${websiteName} | Home`}</title>
         </Helmet>
         <Banner></Banner>
-        <BrowseCategory></BrowseCategory>
+            <BrowseCategory></BrowseCategory>
+        <Testimonial></Testimonial>
+        <Stat></Stat>
+        <Ticket></Ticket>
+     
+           <NewsLetter></NewsLetter>
       </div>
     );
 };
