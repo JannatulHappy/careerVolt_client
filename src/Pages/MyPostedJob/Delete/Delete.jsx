@@ -1,10 +1,12 @@
 import React from "react";
 import Swal from "sweetalert2";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { API_BASE_URL } from "../../../api/api";
 import axios from "axios";
 
-const Delete = ({ id, data}) => {
+const Delete = ({ id, data }) => {
+        const queryClient = useQueryClient();
+
   const mutation = useMutation({
     mutationFn: (newTodo) => {
       Swal.fire({
@@ -21,12 +23,11 @@ const Delete = ({ id, data}) => {
         }
       });
     },
-    onSuccess: (data) => {
-      // Remove the deleted item from the data
-      const updatedData = data.filter((job) => job._id !== id);
-      // Update the data in the query cache
-      QueryClient.setQueryData(["EmployerPostedJob", email], updatedData);
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["EmployerPostedJob"] });
+     
     },
+     
   });
 
   return (

@@ -70,8 +70,7 @@ const [overDeadline,setOverDeadline]=useState("")
     ? Swal.fire({
         icon: "error",
         title: "Failed to add the product.",
-      text: error,
-           
+        
       })
     : null;
 

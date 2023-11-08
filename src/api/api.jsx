@@ -11,6 +11,12 @@ export const fetchSingleJob = async (id) => {
   const response = await axios.get(`${API_BASE_URL}/user/jobs/${id}`);
   return response.data;
 };
+export const fetchSinglePostedJob = async (id) => {
+  const response = await axios.get(
+    `${API_BASE_URL}/employer/singlePostedJobs/${id}`
+  );
+  return response.data;
+};
 export const fetchEmployerPostedJob = async (email) => {
   const response = await axios.get(
     `${API_BASE_URL}/employer/postedJobs/${email}`

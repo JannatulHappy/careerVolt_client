@@ -1,13 +1,20 @@
 
 
-
-import { QueryClient, useQuery } from "@tanstack/react-query";
+//   const handleDeleteItem = (id) => {
+//     // Remove the deleted item from the data
+//     const updatedData = data.filter((job) => job._id !== id);
+//     // Update the data in the query cache
+//     queryClient.setQueryData(["EmployerPostedJob", email], updatedData);
+//   };
+import { useQuery,  } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import { fetchEmployerPostedJob } from "../../api/api";
 import { AuthContext } from "../../providers/AuthProvider";
 import Delete from "./Delete/Delete";
+import { Link } from "react-router-dom";
 
 const MyPostedJob = () => {
+    
   const { user } = useContext(AuthContext);
   const email = user.email;
   const { isLoading, isError, data, error } = useQuery({
@@ -22,12 +29,6 @@ const MyPostedJob = () => {
   if (isError) {
     return <span>Error: {error.message}</span>;
   }
-    const handleDeleteItem = (id) => {
-      // Remove the deleted item from the data
-      const updatedData = data.filter((job) => job._id !== id);
-      // Update the data in the query cache
-      QueryClient.setQueryData(["EmployerPostedJob", email], updatedData);
-    };
   // const mutation = useMutation({
 
   //     mutationFn: (newTodo) => {
@@ -59,7 +60,7 @@ const MyPostedJob = () => {
           </thead>
           <tbody>
             {data?.map((job, index) => (
-              <tr>
+              <tr key={index}>
                 <th>{index + 1}</th>
                 <td>{job.Job_title}</td>
                 <td>{job.Category}</td>
@@ -70,7 +71,10 @@ const MyPostedJob = () => {
                 </td>
                 <td>{job.Deadline}</td>
                 <th>
-                  <button className="py-2 btn">
+                  <Link
+                    to={`/employer/singlePostedJobs/${job._id}`}
+                    className="py-2 btn"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -83,10 +87,10 @@ const MyPostedJob = () => {
                         clip-rule="evenodd"
                       />
                     </svg>
-                  </button>
+                  </Link>
                 </th>
                 <th>
-                  <Delete id={job._id}></Delete>
+                  <Delete id={job._id} data={data}></Delete>
                 </th>
               </tr>
             ))}

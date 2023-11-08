@@ -60,6 +60,11 @@ const Header = () => {
             <li>
               <Link to="/employer/myPostedJobs">Posted Jobs</Link>
             </li>
+            {/* <li>
+              <Link to={`/employer/myPostedJobs/update/:id`}>
+               Update Jobs
+              </Link>
+            </li> */}
           </ul>
         </details>
       </li>
