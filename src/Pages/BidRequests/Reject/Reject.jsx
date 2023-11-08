@@ -27,7 +27,7 @@ const Reject = ({ id }) => {
             <div>An error occurred: {mutation.error.message}</div>
           ) : null}
 
-          {mutation.isSuccess ? <div>Todo added!</div> : null}
+         
 
         </>
       )}

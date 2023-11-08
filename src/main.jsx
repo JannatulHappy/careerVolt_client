@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css";
+import "react-step-progress-bar/styles.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./Routes/Routes";
 import AuthProvider from "./providers/AuthProvider";

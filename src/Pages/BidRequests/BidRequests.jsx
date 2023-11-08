@@ -1,19 +1,14 @@
-//   const handleDeleteItem = (id) => {
-//     // Remove the deleted item from the data
-//     const updatedData = data.filter((job) => job._id !== id);
-//     // Update the data in the query cache
-//     queryClient.setQueryData(["EmployerPostedJob", email], updatedData);
-//   };
-import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { fetchBidRequests } from "../../api/api";
+import "react-step-progress-bar/styles.css";
+import { ProgressBar, Step } from "react-step-progress-bar";
 import { AuthContext } from "../../providers/AuthProvider";
-
-import { Link } from "react-router-dom";
 import Reject from "./Reject/Reject";
 
+
+
 const BidRequests = () => {
-  // const queryClient = useQueryClient();
   const { user } = useContext(AuthContext);
   const email = user.email;
   const { isLoading, isError, data, error } = useQuery({
@@ -28,25 +23,7 @@ const BidRequests = () => {
   if (isError) {
     return <span>Error: {error.message}</span>;
   }
-  // const mutation = useMutation({
 
-  //     mutationFn: (newTodo) => {
-  //         console.log(newTodo);
-  //      return axios.delete("/todos", newTodo);
-  //    },
-  //  });
-  //   const deletePostMutation = useMutation({
-  //     mutationFn: deleteJob,
-  //     onSuccess: () => {
-  //       queryClient.invalidateQueries({ queryKey: ["EmployerPostedJob"] });
-  //     },
-  //   });
-
-  // const handleDelete = (id) => {
-  //   deletePostMutation.mutate(id);
-  // };
-
-  console.log(data);
   return (
     <div className="px-5 mx-auto my-10 max-w-7xl">
       <h2 className="py-10 mb-10 text-3xl font-medium text-center">
@@ -58,12 +35,11 @@ const BidRequests = () => {
             <tr className="text-sm">
               <th></th>
               <th>Job Title</th>
-
               <th> Candidate Email</th>
-
               <th>Price</th>
               <th>Deadline</th>
               <th>status</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -73,7 +49,6 @@ const BidRequests = () => {
                 <td className="text-lg font-medium text-primary">
                   {job.Job_title}
                 </td>
-
                 <td className="text-sm font-medium text-primary">
                   {job.Candidate_email}
                 </td>
@@ -84,20 +59,60 @@ const BidRequests = () => {
                   {job.candidate_Deadline}
                 </td>
                 <td className="text-base font-medium text-primary">
-                  {job.status === "Pending" && <p>In Progress</p>}
-                  {job.status === "Reject" && <p>Rejected.</p>}
+                  {job.status === "Pending"
+                    ? "In Progress"
+                    : job.status === "Reject"
+                    ? "Rejected"
+                    : null}
                 </td>
-
                 <td>
-                  <div className="flex gap-5">
-                    {job.status === "Pending" && (
+                  {job.status === "Pending" && (
+                    <div className="flex justify-between gap-5">
                       <button className="btn btn-accent">Accept</button>
-                    )}
-                    {job.status === "Pending" && (
-                      <Reject status={job.status} id={job._id}></Reject>
-                    )}
-                  </div>
-                  {job.status === "Reject" && <div>Completed</div>}
+                      <Reject status={job.status} id={job._id} />
+                    </div>
+                  )}
+                  {job.status === "Reject" && (
+                    <div className="">
+                      <ProgressBar
+                        percent={100} // Adjust the progress percentage
+                        filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
+                      >
+                        <Step transition="scale">
+                          {({ accomplished }) => (
+                            <img
+                              style={{
+                                filter: `grayscale(${accomplished ? 0 : 40}%)`,
+                              }}
+                              width="20"
+                              src="https://orig00.deviantart.net/493a/f/2017/095/5/4/raichu_icon_by_pokemonshuffle_icons-db4ryym.png" // Customize with your images
+                            />
+                          )}
+                        </Step>
+                        <Step transition="scale">
+                          {({ accomplished }) => (
+                            <img
+                              style={{
+                                filter: `grayscale(${accomplished ? 0 : 70}%)`,
+                              }}
+                              width="20"
+                              src="https://vignette.wikia.nocookie.net/pkmnshuffle/images/9/97/Pikachu_%28Smiling%29.png/revision/latest?cb=20170410234508" // Customize with your images
+                            />
+                          )}
+                        </Step>
+                        <Step transition="scale">
+                          {({ accomplished }) => (
+                            <img
+                              style={{
+                                filter: `grayscale(${accomplished ? 0 : 100}%)`,
+                              }}
+                              src="https://orig00.deviantart.net/493a/f/2017/095/5/4/raichu_icon_by_pokemonshuffle_icons-db4ryym.png" // Customize with your images
+                            />
+                          )}
+                        </Step>
+                      </ProgressBar>
+                    </div>
+                  )}
                 </td>
               </tr>
             ))}
