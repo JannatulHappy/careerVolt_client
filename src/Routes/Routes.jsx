@@ -13,6 +13,7 @@ import MyPostedJob from "../Pages/MyPostedJob/MyPostedJob";
 import UpdateJobs from "../Pages/UpdateJobs/UpdateJobs";
 import BidRequests from "../Pages/BidRequests/BidRequests";
 import Testimonials from "../Pages/Testimonials/Testimonials";
+import JobListing from "../Pages/JobListing/JobListing";
 
 
 const router = createBrowserRouter([
@@ -32,7 +33,6 @@ const router = createBrowserRouter([
             <JobsDetails />
           </PrivateRoute>
         ),
-        
       },
       {
         path: "/user/addJob",
@@ -84,6 +84,10 @@ const router = createBrowserRouter([
         ),
       },
 
+      {
+        path: "/candidate/jobListing",
+        element: <JobListing></JobListing>,
+      },
       {
         path: "/login",
         element: <Login />,

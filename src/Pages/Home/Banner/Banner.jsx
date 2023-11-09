@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import bannerImg01 from "../../../assets/banner01.png";
 import bannerImg02 from "../../../assets/banner02.png";
 import bannerImg03 from "../../../assets/banner03.png";
+import { Link } from "react-router-dom";
 const Banner = () => {
   const settings = {
     dots: true,
@@ -59,7 +60,8 @@ const Banner = () => {
           >
             Place Where Opportunities are Found
           </motion.h1>
-          <button
+          <Link
+            to="/candidate/jobListing"
             type="button"
             className="inline-flex items-center px-8 py-4 mt-10 mb-2 ml-2 text-base font-medium text-center text-white border border-blue-700 rounded-lg sm:py-5 hover:text-primary bg-primary hover:bg-transparent"
           >
@@ -78,13 +80,17 @@ const Banner = () => {
               />
             </svg>
             JOBS LISTING
-          </button>
+          </Link>
         </div>
         <div className="w-11/12 lg:w-9/12 ">
           <div className="">
             <Slider {...settings} className="relative ">
               <div className="absolute flex items-center justify-center bottom-[6px]">
-                <img className="w-[300px] lg:w-[400px]" src={bannerImg01} alt="" />
+                <img
+                  className="w-[300px] lg:w-[400px]"
+                  src={bannerImg01}
+                  alt=""
+                />
               </div>
               <div className="pl-5 text-white lg:my-16">
                 <div>
