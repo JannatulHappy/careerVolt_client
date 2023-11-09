@@ -13,7 +13,7 @@ const Banner = () => {
     dots: true,
     infinite: true,
     arrows: false,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 1500,
     slidesToShow: 2,
     slidesToScroll: 2,
