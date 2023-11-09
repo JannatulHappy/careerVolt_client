@@ -12,7 +12,7 @@ const Testimonials = () => {
   const goTo = useNavigate();
   const mutation = useMutation({
     mutationFn: (testimonial) => {
-      console.log(testimonial);
+     
       return axios.post(` ${API_BASE_URL}/user/addTestimonial`, testimonial);
     },
   });

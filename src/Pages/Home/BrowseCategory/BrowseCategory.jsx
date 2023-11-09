@@ -37,13 +37,13 @@ const BrowseCategory = () => {
     setData(jobsData);
 
     const webCategoriesFilter = jobsData.filter(
-      (category) => category.Category.toLowerCase() === "web development"
+      (category) => category.Category === "Web Development"
     );
     const digitalCategoriesFilter = jobsData.filter(
-      (category) => category.Category.toLowerCase() === "digital marketing"
+      (category) => category.Category=== "Digital Marketing"
     );
     const graphicCategoriesFilter = jobsData.filter(
-      (category) => category.Category.toLowerCase() === "graphics design"
+      (category) => category.Category === "Graphics Design"
     );
 
     setWebCategories(webCategoriesFilter);

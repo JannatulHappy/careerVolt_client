@@ -17,7 +17,10 @@ const AddJobs = () => {
   const mutation = useMutation({
     mutationFn: (job) => {
       console.log(job);
-      return axios.post(` ${API_BASE_URL}/employer/addJob`, job);
+      return axios.post(
+        ` ${API_BASE_URL}/employer/addJob`,
+        job
+      );
     },
   });
   const onSubmit = (e) => {
@@ -99,6 +102,23 @@ const AddJobs = () => {
         "success"
       )
     : null;
+  //  swal
+  //    .fire({
+  //      title: "Are you sure?",
+  //      text: "You won't be able to revert this!",
+  //      icon: "warning",
+  //      showCancelButton: true,
+  //      confirmButtonColor: "#3085d6",
+  //      cancelButtonColor: "#d33",
+  //      confirmButtonText: "Yes, delete it!",
+
+  //      cancelButtonText: "Cancel",
+  //    })
+  //    .then((result) => {
+  //      if (result.isConfirmed) {
+  //        deletePostMutation.mutate(id);
+  //      }
+  //    });
   mutation.isSuccess && goTo("/employer/myPostedJobs", { replace: true });
   const websiteName = "Career Volt";
 
@@ -276,9 +296,7 @@ const AddJobs = () => {
                   <option className="py-2" value="Graphics Design">
                     Graphics Design
                   </option>
-                  <option className="py-2" value="Freelance">
-                    Freelance
-                  </option>
+                  
                 </select>
               </div>
               <div className="w-full md:w-1/2">
@@ -313,7 +331,7 @@ const AddJobs = () => {
 
             <div className="flex flex-col justify-between gap-6 md:flex-row">
               <div className="w-full mt-2 md:w-1/2">
-                <label for="message" className="text-base ">
+                <label  className="text-base ">
                   Short Description
                 </label>
                 <textarea
@@ -325,7 +343,7 @@ const AddJobs = () => {
                 ></textarea>
               </div>
               <div className="w-full mt-2 md:w-1/2">
-                <label for="message" className="text-base">
+                <label  className="text-base">
                   Benefits
                 </label>
                 <textarea
@@ -338,7 +356,7 @@ const AddJobs = () => {
               </div>
             </div>
             <div className="mt-3">
-              <label for="message" className="block my-2 ">
+              <label  className="block my-2 ">
                 Requirements
               </label>
               <textarea
@@ -350,7 +368,7 @@ const AddJobs = () => {
               ></textarea>
             </div>
             <div className="mt-3">
-              <label for="message" className="block my-2 ">
+              <label  className="block my-2 ">
                 Description
               </label>
               <textarea

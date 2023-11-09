@@ -11,7 +11,7 @@ const Ticket = () => {
         <p className="w-40 border-b-8 border-primary"></p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         <motion.div
           whileHover="hover"
           variants={{ hover: { scale: 1.05 } }}

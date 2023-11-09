@@ -50,10 +50,7 @@ function Login() {
     const websiteName = "Career Volt";
   return (
     <div className="px-5 py-10">
-      <Helmet>
-        {" "}
-        <title>{websiteName} | Login</title>
-      </Helmet>
+      <Helmet> <title>{websiteName} | Login</title></Helmet>
       <div className="py-5 text-center">
         <h1 className="text-4xl font-bold">Please Login</h1>
       </div>

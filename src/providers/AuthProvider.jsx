@@ -14,6 +14,7 @@ import {
 } from "firebase/auth";
 import { useEffect } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../api/api";
 
 export const AuthContext = createContext();
 
@@ -55,7 +56,7 @@ const AuthProvider = ({ children }) => {
       // if user exists then issue a token
       if (currentUser) {
         axios
-          .post("https://career-volt-server.vercel.app/jwt", loggedUser, {
+          .post(`${API_BASE_URL}/jwt`, loggedUser, {
             withCredentials: true,
           })
           .then((res) => {
@@ -64,7 +65,7 @@ const AuthProvider = ({ children }) => {
       } else {
         // remove token after logout
         axios
-          .post("https://career-volt-server.vercel.app/logout", loggedUser, {
+          .post(`${API_BASE_URL}/logout`, loggedUser, {
             withCredentials: true,
           })
           .then((res) => {

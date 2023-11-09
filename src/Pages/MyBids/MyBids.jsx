@@ -38,7 +38,7 @@ const MyBids = () => {
           <h2 className="py-10 mb-10 text-3xl font-medium text-center">
             {user.email} Bids on Projects
           </h2>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto mb-96">
             <table className="table table-xs">
               <thead>
                 <tr className="text-sm">
@@ -52,8 +52,8 @@ const MyBids = () => {
                 </tr>
               </thead>
               <tbody>
-                {data?.map((job, index) => (
-                  <tr key={index}>
+                {data?.map((job,index) => (
+                  <tr key={job._id}>
                     <th className="text-base">{index + 1}</th>
                     <td className="text-lg font-medium text-primary">
                       {job.Job_title}
