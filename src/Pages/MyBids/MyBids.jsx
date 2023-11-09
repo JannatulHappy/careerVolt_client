@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
-import {  fetchMyBids } from "../../api/api";
-import Complete from "./Complete/Complete"
+import { fetchMyBids } from "../../api/api";
+import Complete from "./Complete/Complete";
 
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
-
 
 const MyBids = () => {
   const { user } = useContext(AuthContext);
@@ -21,9 +20,8 @@ const MyBids = () => {
 
   if (isError) {
     return <span>Error: {error.message}</span>;
-    }
-      const websiteName = "Career Volt";
-  
+  }
+  const websiteName = "Career Volt";
 
   return (
     <div className="px-5 mx-auto my-10 max-w-7xl">
@@ -31,9 +29,9 @@ const MyBids = () => {
         <title>{`${websiteName} | My Bids`}</title>
       </Helmet>
       {data.length === 0 ? (
-        <div className="flex items-center justify-center h-screen text-4xl font-bold">
+        <div className="flex items-center justify-center h-screen text-4xl font-bold ">
           {" "}
-          No Bid Requests !!
+          <p className=""> Please Explore Jobs & Place Your Bids!</p>
         </div>
       ) : (
         <>

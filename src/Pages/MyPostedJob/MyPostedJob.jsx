@@ -53,14 +53,14 @@ const MyPostedJob = () => {
         <title>{`${websiteName} | Posted Jobs`}</title>
       </Helmet>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto ">
         {data.length === 0 ? (
           <div className="flex items-center justify-center h-screen text-4xl font-bold">
             {" "}
-            You have not added any Job!!!
+           Go to Post Jobs & Add Your Jobs!!
           </div>
         ) : (
-          <div>
+          <div className="mb-96">
             <h2 className="py-10 mb-10 text-3xl font-medium text-center">
               {user.displayName}'s Posted Job
             </h2>

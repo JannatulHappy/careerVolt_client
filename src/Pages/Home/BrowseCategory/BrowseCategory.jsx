@@ -51,15 +51,15 @@ const BrowseCategory = () => {
     setGraphicCategories(graphicCategoriesFilter);
     setIsLoading(false);
   }, [jobsData, jobsLoading, jobsError]);
-const baseDate=new Date()
+  const baseDate = new Date();
   return (
     <div className="px-5 pt-16 text-black bg-white">
       <div className="px-5 mx-auto max-w-7xl">
         <motion.h1
           initial={{ x: "100w" }}
-          animate={{ fontSize: "36px", textAlign: "center", x: 0 }}
+          animate={{ fontSize: "36px", x: 0 }}
           transition={{ type: "spring", delay: 0.5 }}
-          className="pb-10 "
+          className="pb-10 text-center"
         >
           Browse Jobs By Popular Categories
         </motion.h1>
@@ -73,7 +73,7 @@ const baseDate=new Date()
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="#5f63ff"
-                  className="w-16 h-16 mx-auto mb-2 "
+                  className="mx-auto mb-2 w-14 h-14 "
                 >
                   <path
                     strokeLinecap="round"
@@ -96,7 +96,7 @@ const baseDate=new Date()
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="#5f63ff"
-                  className="w-16 h-16 mx-auto mb-2 "
+                  className="mx-auto mb-2 h-14 w-14 "
                 >
                   <path
                     strokeLinecap="round"
@@ -119,7 +119,7 @@ const baseDate=new Date()
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="#5f63ff"
-                  className="w-16 h-16 mx-auto mb-2 "
+                  className="mx-auto mb-2 w-14 h-14 "
                 >
                   <path
                     strokeLinecap="round"
@@ -155,6 +155,22 @@ const baseDate=new Date()
                 <table className="text-left text-gray-500 lg:w-full w-[1040px] ">
                   <tbody className="">
                     <tr className="text-left bg-white ">
+                      <td className="px-6 py-4 border-r-2">
+                        <div className="text-lg ">
+                          {/* {web.Date_posted}
+                          {
+                            (formatDistance(
+                              parseISO(web.Date_posted, new Date())
+                            ),
+                            new Date())
+                          }{" "} */}
+                          {formatDistanceStrict(
+                            parseISO(web.Date_posted, new Date()),
+                            baseDate
+                          )}{" "}
+                          ago
+                        </div>
+                      </td>
                       <td className="py-5 pl-3">
                         <img src={web.img} alt="" className="w-14" />
                       </td>

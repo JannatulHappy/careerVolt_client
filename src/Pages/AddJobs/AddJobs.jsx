@@ -34,7 +34,7 @@ const AddJobs = () => {
     const Date_posted = new Date();
     const Deadline = form.get("Deadline");
     const Category = form.get("Category");
-   
+
     const Short_description = form.get("Short_description");
     const Benefits = form.get("Benefits");
     const Description = form.get("Description");
@@ -88,7 +88,6 @@ const AddJobs = () => {
     ? Swal.fire({
         icon: "error",
         title: "Failed to add the Job.",
-       
       })
     : null;
 
@@ -102,28 +101,31 @@ const AddJobs = () => {
     : null;
   mutation.isSuccess && goTo("/employer/myPostedJobs", { replace: true });
   const websiteName = "Career Volt";
- 
+
   return (
     <div className="bg-white ">
-     
       <Helmet>
         <title>{`${websiteName} | Add Job`}</title>
       </Helmet>
-      
-      <div className="w-full h-[300px] bg-[url('https://i.ibb.co/Qj3RGbV/financial-firms-esg-meeting-event-summit-data.jpg')] bg-cover  bg-no-repeat bg-center ">
-        <div className="flex items-center justify-start w-full h-[300px] bg-blue-900/30 backdrop-brightness-75  text-left ">
-          <div className="px-5 mx-auto max-w-7xl">
-            <div className="w-full h-full text-left">
-              <h4 className="text-lg font-semibold text-left text-white ">
-                Find Your Candidate
-              </h4>
-              <h1 className="pl-8 mt-5 text-3xl font-bold tracking-wide text-left text-white border-l-8 border-white lg:text-7xl md:text-5xl ">
-                Post A Job
-              </h1>
+
+      <div>
+        <div className="w-full  bg-[url('https://i.ibb.co/Qj3RGbV/financial-firms-esg-meeting-event-summit-data.jpg')] bg-cover  bg-no-repeat bg-center ">
+          {" "}
+          <div className="flex items-center justify-start w-full h-[300px] bg-blue-900/30 backdrop-brightness-75  text-left ">
+            <div className="px-5 mx-auto max-w-7xl">
+              <div className="w-full h-full text-left">
+                <h4 className="text-lg font-semibold text-left text-white ">
+                  Find Your Candidate
+                </h4>
+                <h1 className="pl-8 mt-5 text-3xl font-bold tracking-wide text-left text-white border-l-8 border-white lg:text-7xl md:text-5xl ">
+                  Post A Job
+                </h1>
+              </div>
             </div>
           </div>
         </div>
-        <div className="px-5 py-5 mx-auto my-10 bg-gray-100 rounded-lg max-w-7xl">
+
+        <div className="px-5 py-5 mx-auto my-20 bg-gray-100 rounded-lg max-w-7xl">
           <form onSubmit={onSubmit} className="px-5 my-10 space-y-3 text-black">
             <h2 className="text-3xl pb-7">General Information</h2>
             <div className="flex flex-col justify-between gap-6 md:flex-row">

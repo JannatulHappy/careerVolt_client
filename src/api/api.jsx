@@ -1,8 +1,8 @@
 // api.js
 import axios from "axios";
 
-// export const API_BASE_URL = "http://localhost:5000/api/v1";
-export const API_BASE_URL = `https://career-volt-server.vercel.app/api/v1`;
+export const API_BASE_URL = "http://localhost:5000/api/v1";
+// export const API_BASE_URL = `https://career-volt-server.vercel.app/api/v1`;
 
 export const fetchJobs = async () => {
   const response = await axios.get(`${API_BASE_URL}/user/jobs`);
@@ -31,11 +31,12 @@ export const fetchBidRequests = async (email) => {
   );
   return response.data;
 };
+
+// ----------------
+// -------------
 // get all the bids which logged user has requested
 export const fetchMyBids = async (email) => {
-  const response = await axios.get(
-    `${API_BASE_URL}/candidate/myBids/${email}`
-  );
+  const response = await axios.get(`${API_BASE_URL}/candidate/myBids/${email}`,{withCredentials:true});
   return response.data;
 };
 export const deleteEmployerPostedJob = async (id) => {
@@ -59,23 +60,23 @@ export async function deleteJob(id) {
   return response.json();
 }
 // const deletePostMutation = useMutation({
-  //   mutationFn: () => {
-  //     Swal.fire({
-  //       title: "Are you sure?",
-  //       text: "You want Delete?",
-  //       icon: "warning",
-  //       showCancelButton: true,
-  //       confirmButtonText: "Delete",
-  //       cancelButtonText: "Cancel",
-  //     }).then((result) => {
-  //       if (result.isConfirmed) {
-  //         deleteJob;
-  //       }
-  //     });
-  //   },
-  //   onSuccess: () => {
-  //     queryClient.invalidateQueries({ queryKey: ["EmployerPostedJob"] });
-  //   },
-  // }); // const handleDelete = (id) => {
-  //   deletePostMutation.mutate(id);
-  // };
+//   mutationFn: () => {
+//     Swal.fire({
+//       title: "Are you sure?",
+//       text: "You want Delete?",
+//       icon: "warning",
+//       showCancelButton: true,
+//       confirmButtonText: "Delete",
+//       cancelButtonText: "Cancel",
+//     }).then((result) => {
+//       if (result.isConfirmed) {
+//         deleteJob;
+//       }
+//     });
+//   },
+//   onSuccess: () => {
+//     queryClient.invalidateQueries({ queryKey: ["EmployerPostedJob"] });
+//   },
+// }); // const handleDelete = (id) => {
+//   deletePostMutation.mutate(id);
+// };

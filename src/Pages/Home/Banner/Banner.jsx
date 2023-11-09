@@ -53,7 +53,7 @@ const Banner = () => {
       <div className="flex flex-col items-center justify-center px-5 mx-auto text-white max-w-7xl lg:flex-row">
         <div className="w-10/12 mt-10 lg:mb-10 lg:w-3/12 md:mb-0">
           <motion.h1
-            className="text-4xl leading-snug sm:text-5xl"
+            className="text-4xl leading-tight sm:text-5xl"
             transition={{ type: "spring", stiffness: 200 }}
             whileHover={{ scale: 1.1, originX: 0 }}
           >

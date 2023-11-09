@@ -8,8 +8,6 @@ import Reject from "./Reject/Reject";
 import Accept from "./Accept/Accept";
 import { Helmet } from "react-helmet-async";
 
-
-
 const BidRequests = () => {
   const { user } = useContext(AuthContext);
   const email = user.email;
@@ -26,7 +24,7 @@ const BidRequests = () => {
     return <span>Error: {error.message}</span>;
   }
   const websiteName = "Career Volt";
-   
+
   return (
     <div className="px-5 mx-auto my-10 max-w-7xl">
       <Helmet>
@@ -35,7 +33,7 @@ const BidRequests = () => {
       {data.length === 0 ? (
         <div className="flex items-center justify-center h-screen text-4xl font-bold">
           {" "}
-         No Bid Requests !!
+          No Bid Requests !! Please Add Bid on Projects!!!
         </div>
       ) : (
         <>
@@ -43,7 +41,7 @@ const BidRequests = () => {
           <h2 className="py-10 mb-10 text-3xl font-medium text-center">
             Bid Requests On your Project
           </h2>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto mb-96">
             <table className="table table-xs">
               <thead>
                 <tr className="text-sm">

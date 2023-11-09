@@ -36,7 +36,7 @@ export default function Index() {
             <img
               src={NewsLetterImg}
               alt="man in black suit holding brown paper"
-              className="hidden rounded lg:block"
+              className="block rounded"
             />
            
           </div>

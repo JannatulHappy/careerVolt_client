@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 // ES6 Modules or TypeScript
 import Swal from "sweetalert2";
 import { AuthContext } from '../../providers/AuthProvider';
+import { Helmet } from "react-helmet-async";
 // import { updateProfile } from "firebase/auth";
 
 function Login() {
@@ -49,6 +50,10 @@ function Login() {
     const websiteName = "Career Volt";
   return (
     <div className="px-5 py-10">
+      <Helmet>
+        {" "}
+        <title>{websiteName} | Login</title>
+      </Helmet>
       <div className="py-5 text-center">
         <h1 className="text-4xl font-bold">Please Login</h1>
       </div>

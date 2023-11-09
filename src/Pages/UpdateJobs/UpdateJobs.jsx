@@ -14,7 +14,7 @@ const UpdateJobs = () => {
     queryFn: () => fetchSinglePostedJob(params.id),
   });
   if (isLoading) {
-    return <span className="text-white">Loading...</span>;
+    return <progress className="w-2/6 mx-auto progress"></progress>;
   }
 
   if (isError) {

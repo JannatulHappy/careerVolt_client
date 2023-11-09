@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import logo from "../../../assets/logo-inverse.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -17,20 +17,20 @@ const Header = () => {
   const li = (
     <>
       <li>
-        <Link to="/" className="hover:text-primary">
+        <NavLink to="/" className="hover:text-primary">
           {" "}
           HOME
-        </Link>
-        {/* <NavLink>Home</NavLink> */}
+        </NavLink>
+        {/* <NavNavLink>Home</NavNavLink> */}
       </li>
-      <li className="z-1">
+      <li className="z-10">
         <details>
           <summary tabIndex={0} className="hover:text-primary">
             FOR candidates
           </summary>
           <ul tabIndex={0} className="p-2 text-black">
             <li>
-              <Link to="/candidate/myBids">
+              <NavLink to="/candidate/myBids">
                 {" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -45,19 +45,19 @@ const Header = () => {
                   />
                 </svg>
                 My Bids
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </details>
       </li>
       <li className="z-50">
-        <details>
+        <details className="dropdown">
           <summary tabIndex={1} className="hover:text-primary">
             FOR employers
           </summary>
           <ul tabIndex={1} className="p-2 text-black">
             <li className="text-xs w-52">
-              <Link to="/user/addJob">
+              <NavLink to="/user/addJob">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -71,10 +71,10 @@ const Header = () => {
                   />
                 </svg>
                 Post Job
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/employer/myPostedJobs">
+              <NavLink to="/employer/myPostedJobs">
                 {" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,10 +89,10 @@ const Header = () => {
                   />
                 </svg>
                 Posted Jobs
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/employer/myBidRequests">
+              <NavLink to="/employer/myBidRequests">
                 {" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,12 +107,12 @@ const Header = () => {
                   />
                 </svg>
                 Bid Requests
-              </Link>
+              </NavLink>
             </li>
             {/* <li>
-              <Link to={`/employer/myPostedJobs/update/:id`}>
+              <NavLink to={`/employer/myPostedJobs/update/:id`}>
                Update Jobs
-              </Link>
+              </NavLink>
             </li> */}
           </ul>
         </details>
@@ -147,15 +147,13 @@ const Header = () => {
               {li}
               {user?.email ? (
                 <div className="dropdown dropdown-end">
-                 
                   <ul
                     tabIndex={1}
                     className="menu menu-sm text-black bg-white dropdown-content mt-3 z-[1] p-2 shadow  rounded-box "
                   >
-                   
                     <li>
                       <button onClick={handleSignOut}>
-                        <Link className="text-primary bg-secondary border-2 border-blue-700  inline-flex items-center font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-3 mb-2  ">
+                        <NavLink className="text-primary bg-secondary border-2 border-blue-700  inline-flex items-center font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-3 mb-2  ">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -171,14 +169,14 @@ const Header = () => {
                             />
                           </svg>
                           LOGOUT
-                        </Link>
+                        </NavLink>
                       </button>
                     </li>
                   </ul>
                 </div>
               ) : (
                 <>
-                  <Link
+                  <NavLink
                     to="/register"
                     type="button"
                     className="text-white hover:text-primary  border-2 border-blue-700  inline-flex items-center font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-3 mb-2  "
@@ -196,8 +194,8 @@ const Header = () => {
                       />
                     </svg>
                     SIGN UP
-                  </Link>{" "}
-                  <Link
+                  </NavLink>{" "}
+                  <NavLink
                     to="/login"
                     type="button"
                     className="inline-flex items-center px-5 py-2.5 mb-2 ml-2 text-sm font-medium text-center text-white border border-blue-700 rounded-lg hover:text-primary bg-primary hover:bg-transparent "
@@ -217,13 +215,16 @@ const Header = () => {
                       />
                     </svg>
                     LOGIN
-                  </Link>
+                  </NavLink>
                 </>
               )}
             </ul>
           </div>
           <div>
-            <img src={logo} alt="" />
+            <Link to="/">
+              {" "}
+              <img src={logo} alt="" />
+            </Link>
           </div>
         </div>
         <div className="flex-none hidden pl-10 lg:flex">
@@ -251,7 +252,7 @@ const Header = () => {
                 </li>
                 <li>
                   <button onClick={handleSignOut}>
-                    <Link className="text-primary bg-secondary border-2 border-blue-700  inline-flex items-center font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-3 mb-2  ">
+                    <NavLink className="text-primary bg-secondary border-2 border-blue-700  inline-flex items-center font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-3 mb-2  ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -267,14 +268,14 @@ const Header = () => {
                         />
                       </svg>
                       LOGOUT
-                    </Link>
+                    </NavLink>
                   </button>
                 </li>
               </ul>
             </div>
           ) : (
             <>
-              <Link
+              <NavLink
                 to="/register"
                 type="button"
                 className="text-white hover:text-primary  border-2 border-blue-700  inline-flex items-center font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-3 mb-2  "
@@ -292,8 +293,8 @@ const Header = () => {
                   />
                 </svg>
                 SIGN UP
-              </Link>{" "}
-              <Link
+              </NavLink>{" "}
+              <NavLink
                 to="/login"
                 type="button"
                 className="inline-flex items-center px-5 py-2.5 mb-2 ml-2 text-sm font-medium text-center text-white border border-blue-700 rounded-lg hover:text-primary bg-primary hover:bg-transparent "
@@ -313,7 +314,7 @@ const Header = () => {
                   />
                 </svg>
                 LOGIN
-              </Link>
+              </NavLink>
             </>
           )}
         </div>
