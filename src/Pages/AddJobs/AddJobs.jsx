@@ -17,10 +17,7 @@ const AddJobs = () => {
   const mutation = useMutation({
     mutationFn: (job) => {
       console.log(job);
-      return axios.post(
-        ` ${API_BASE_URL}/employer/addJob`,
-        job
-      );
+      return axios.post(` ${API_BASE_URL}/employer/addJob`, job);
     },
   });
   const onSubmit = (e) => {
@@ -95,31 +92,21 @@ const AddJobs = () => {
     : null;
 
   mutation.isSuccess
-    ? Swal.fire(
-        "Job Added Successfully!",
-        "See Your Posted Job!",
+    ? Swal.fire({
+        title: "Job Added Successfully!",
+        text: "See Your Posted Job!",
 
-        "success"
-      )
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ok",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          goTo("/employer/myPostedJobs", { replace: true });
+        }
+      })
     : null;
-  //  swal
-  //    .fire({
-  //      title: "Are you sure?",
-  //      text: "You won't be able to revert this!",
-  //      icon: "warning",
-  //      showCancelButton: true,
-  //      confirmButtonColor: "#3085d6",
-  //      cancelButtonColor: "#d33",
-  //      confirmButtonText: "Yes, delete it!",
 
-  //      cancelButtonText: "Cancel",
-  //    })
-  //    .then((result) => {
-  //      if (result.isConfirmed) {
-  //        deletePostMutation.mutate(id);
-  //      }
-  //    });
-  mutation.isSuccess && goTo("/employer/myPostedJobs", { replace: true });
+  // mutation.isSuccess &&
   const websiteName = "Career Volt";
 
   return (
@@ -296,7 +283,6 @@ const AddJobs = () => {
                   <option className="py-2" value="Graphics Design">
                     Graphics Design
                   </option>
-                  
                 </select>
               </div>
               <div className="w-full md:w-1/2">
@@ -331,9 +317,7 @@ const AddJobs = () => {
 
             <div className="flex flex-col justify-between gap-6 md:flex-row">
               <div className="w-full mt-2 md:w-1/2">
-                <label  className="text-base ">
-                  Short Description
-                </label>
+                <label className="text-base ">Short Description</label>
                 <textarea
                   id="Short_description"
                   name="Short_description"
@@ -343,9 +327,7 @@ const AddJobs = () => {
                 ></textarea>
               </div>
               <div className="w-full mt-2 md:w-1/2">
-                <label  className="text-base">
-                  Benefits
-                </label>
+                <label className="text-base">Benefits</label>
                 <textarea
                   id="Benefits"
                   name="Benefits"
@@ -356,9 +338,7 @@ const AddJobs = () => {
               </div>
             </div>
             <div className="mt-3">
-              <label  className="block my-2 ">
-                Requirements
-              </label>
+              <label className="block my-2 ">Requirements</label>
               <textarea
                 id="Requirements"
                 name="Requirements"
@@ -368,9 +348,7 @@ const AddJobs = () => {
               ></textarea>
             </div>
             <div className="mt-3">
-              <label  className="block my-2 ">
-                Description
-              </label>
+              <label className="block my-2 ">Description</label>
               <textarea
                 id="Description"
                 name="Description"

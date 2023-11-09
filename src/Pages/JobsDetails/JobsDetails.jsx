@@ -29,7 +29,7 @@ const JobsDetails = () => {
     return <span className="text-white">Error: {error.message}</span>;
   }
   const websiteName = "Career Volt";
-  
+
   return (
     <div className="mb-10 bg-white">
       <Helmet>

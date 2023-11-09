@@ -75,16 +75,20 @@ const [overDeadline,setOverDeadline]=useState("")
     : null;
 
   mutation.isSuccess
-    ? Swal.fire(
-        "bid Added Successfully!",
-        "See Your Requested Bid!",
+    ? Swal.fire({
+        title: "Bid Requested Successfully!",
+        text: "See Your Requested Bid!",
 
-      "success"
-          
-    )
-    
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ok",
+      }).then((result) => {
+        if (result.isConfirmed) {
+           goTo("/candidate/myBids", { replace: true });
+        }
+      })
     : null;
-  mutation.isSuccess && goTo("/candidate/myBids",{ replace: true });
+  // mutation.isSuccess && goTo("/candidate/myBids",{ replace: true });
   return (
     <form onSubmit={onSubmit} className="text-black mt-9 space-y-">
       <div className="mb-4">

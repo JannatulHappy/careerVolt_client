@@ -77,14 +77,19 @@ const UpdateForm = ({ data }) => {
     : null;
 
   mutation.isSuccess
-    ? Swal.fire(
-        "Job Updated Successfully!",
-        "See Your Posted Job!",
+    ? Swal.fire({
+        title: "Updated Successfully!",
+        text: "See Your Updated Job!",
 
-        "success"
-      )
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ok",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          goTo("/employer/myPostedJobs", { replace: true });
+        }
+      })
     : null;
-  mutation.isSuccess && goTo("/employer/myPostedJobs", { replace: true });
 
   return (
     <div className="bg-white ">

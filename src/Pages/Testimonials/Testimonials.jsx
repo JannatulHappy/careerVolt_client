@@ -46,14 +46,20 @@ const Testimonials = () => {
     : null;
 
   mutation.isSuccess
-    ? Swal.fire(
-        "Testimonial Added Successfully!",
-        "See in Home Page!",
+    ? Swal.fire({
+        title: "Testimonial Added Successfully!",
+        text: "See in Home Page!",
 
-        "success"
-      )
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ok",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          goTo("/", { replace: true });
+        }
+      })
     : null;
-  mutation.isSuccess && goTo("/", { replace: true });
+  
   const websiteName = "Career Volt";
 
   return (
