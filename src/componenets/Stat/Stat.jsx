@@ -2,7 +2,7 @@ import React from "react";
 function Stat() {
   return (
     <>
-      <div class="mx-auto max-w-7xl mt-10 mb-20  lg:mb-24">
+      <div class="mx-auto max-w-7xl mt-16  ">
         <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           <div class="flex justify-center w-full lg:border-r border-gray-300 py-6">
             <svg

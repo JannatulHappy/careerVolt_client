@@ -1,11 +1,15 @@
 // api.js
 import axios from "axios";
 
-export const API_BASE_URL = "http://localhost:5000/api/v1";
-// export const API_BASE_URL = `https://career-volt-server.vercel.app/api/v1`;
+// export const API_BASE_URL = "http://localhost:5000/api/v1";
+export const API_BASE_URL = `https://career-volt-server.vercel.app/api/v1`;
 
 export const fetchJobs = async () => {
   const response = await axios.get(`${API_BASE_URL}/user/jobs`);
+  return response.data;
+};
+export const fetchTestimonial = async () => {
+  const response = await axios.get(`${API_BASE_URL}/user/testimonials`);
   return response.data;
 };
 export const fetchSingleJob = async (id) => {

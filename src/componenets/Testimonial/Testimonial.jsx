@@ -4,9 +4,7 @@ export default function Testimonial() {
   return (
     <>
       <div
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
+      
       >
         <h2 className="px-4 text-xl font-semibold leading-6 text-center ">
           Testimonials

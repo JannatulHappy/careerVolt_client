@@ -12,6 +12,7 @@ import MyBids from "../Pages/MyBids/MyBids";
 import MyPostedJob from "../Pages/MyPostedJob/MyPostedJob";
 import UpdateJobs from "../Pages/UpdateJobs/UpdateJobs";
 import BidRequests from "../Pages/BidRequests/BidRequests";
+import Testimonials from "../Pages/Testimonials/Testimonials";
 
 
 const router = createBrowserRouter([
@@ -71,6 +72,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <UpdateJobs></UpdateJobs>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/user/testimonials",
+        element: (
+          <PrivateRoute>
+            <Testimonials></Testimonials>
           </PrivateRoute>
         ),
       },
