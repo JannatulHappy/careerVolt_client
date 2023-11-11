@@ -24,10 +24,11 @@ const MyBids = () => {
         <h1 className="px-4 mt-6 text-2xl font-bold leading-10 text-center lg:text-5xl md:text-4xl">
           What our client says
         </h1>
-        <div className="container grid gap-6 px-10 py-20 mx-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:px-20">
+        <p className="w-40 py-5 mx-auto border-b-8 border-primary"></p>
+        <div className="container grid gap-10 px-10 py-20 mx-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:px-20">
           {data.map((tes) => (
             <div>
-              <div className="relative flex flex-col items-center w-full p-6 bg-white shadow-md cursor-pointer group hover:bg-primary md:p-12">
+              <div className="relative flex flex-col items-center w-full p-6 bg-white border-t-2 border-gray-100 rounded-lg shadow-2xl cursor-pointer group hover:bg-primary md:p-12">
                 <div className="flex flex-col items-center text-gray-600 group-hover:text-white">
                   <svg
                     width={26}
@@ -39,11 +40,11 @@ const MyBids = () => {
                     <g clipPath="url(#clip0)">
                       <path
                         d="M25.2578 14.3309H19.2969C19.3988 9.55819 20.6309 9.01642 22.1785 8.86178L22.7753 8.78051V3.53242L22.0874 3.57292C20.0666 3.69783 17.8323 4.09805 16.3417 6.11965C15.035 7.89183 14.459 10.7871 14.459 15.2316V23.4673H25.2578V14.3309Z"
-                        fill="currentColor"
+                        fill="#5f63ff"
                       />
                       <path
                         d="M11.48 23.4673V14.3309H5.59859C5.70049 9.55819 6.89283 9.01642 8.44042 8.86178L8.99749 8.78051V3.53242L8.34931 3.57292C6.32844 3.69783 4.07421 4.09805 2.5836 6.11965C1.27707 7.89183 0.681147 10.7871 0.681147 15.2316V23.4673H11.48Z"
-                        fill="currentColor"
+                        fill="#5f63ff"
                       />
                     </g>
                     <defs>
@@ -57,7 +58,7 @@ const MyBids = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                  <p className="mt-4 text-base leading-normal text-center xl:w-80">
+                  <p className="mt-4 text-lg leading-normal text-center xl:w-80">
                     {tes.Description}
                   </p>
                 </div>
@@ -141,11 +142,11 @@ const MyBids = () => {
                   alt="profile pictre"
                   className="w-12 h-12 border-4 border-blue-600 rounded-full"
                 />
-               
-                <p className="my-2 text-base font-semibold leading-4 text-gray-800">
+
+                <p className="my-2 text-sm font-bold leading-4 text-gray-500">
                   {tes.userName}
                 </p>
-                <p className="text-base leading-4 text-center text-gray-600">
+                <p className="text-base leading-4 text-center text-gray-400">
                   {tes.profession}
                 </p>
               </div>

@@ -16,7 +16,7 @@ const Ticket = () => {
           whileHover="hover"
           variants={{ hover: { scale: 1.05 } }}
           transition={{ duration: 0.9, ease: "backInOut" }}
-          className="w-full p-4 mt-20 shadow-xl bg-blue03 rounded-xl sm:p-8"
+          className="w-full p-4 mt-20 border-t-4 border-gray-100 shadow-xl bg-blue03 rounded-xl sm:p-8"
         >
           <h5 className="mb-4 text-lg font-semibold">STARTUP</h5>
 
@@ -113,7 +113,7 @@ const Ticket = () => {
             </li>
           </ul>
 
-          <button className="py-4 mt-5 text-base font-medium border-2 rounded-lg text-primary px-14 border-primary">
+          <button className="py-4 mt-5 text-base font-medium border-2 rounded-lg text-primary px-14 border-primary hover:bg-secondary">
             GET STARTED
           </button>
         </motion.div>
@@ -218,7 +218,7 @@ const Ticket = () => {
             </li>
           </ul>
 
-          <button className="py-4 mt-5 text-base font-medium border-2 rounded-lg text-primary px-14 border-primary">
+          <button className="py-4 mt-5 text-base font-medium border-2 rounded-lg text-primary px-14 border-primary hover:bg-secondary">
             GET STARTED
           </button>
         </motion.div>
@@ -325,7 +325,7 @@ const Ticket = () => {
             </li>
           </ul>
 
-          <button className="py-4 mt-5 text-base font-medium border-2 rounded-lg text-primary px-14 border-primary">
+          <button className="py-4 mt-5 text-base font-medium border-2 rounded-lg text-primary px-14 border-primary hover:bg-secondary">
             GET STARTED
           </button>
         </motion.div>

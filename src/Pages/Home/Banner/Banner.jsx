@@ -14,7 +14,7 @@ const Banner = () => {
     infinite: true,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 1400,
     slidesToShow: 2,
     slidesToScroll: 2,
     appendDots: (dots) => (
@@ -33,7 +33,7 @@ const Banner = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 700,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -52,13 +52,13 @@ const Banner = () => {
   return (
     <div className="bg-secondary mb-[-7px]">
       <div className="flex flex-col items-center justify-center px-5 mx-auto text-white max-w-7xl lg:flex-row">
-        <div className="w-10/12 mt-10 lg:mb-10 lg:w-3/12 md:mb-0">
+        <div className="mt-10 mb-10 md:w-6/12 lg:mb-14 lg:w-4/12 md:mb-4">
           <motion.h1
-            className="text-4xl leading-tight sm:text-5xl"
+            className="mb-3 text-4xl sm:text-5xl"
             transition={{ type: "spring", stiffness: 200 }}
             whileHover={{ scale: 1.1, originX: 0 }}
           >
-            Place Where Opportunities are Found
+            Place Where <p className="py-4">Opportunities are</p> Found
           </motion.h1>
           <Link
             to="/candidate/jobListing"
@@ -82,20 +82,24 @@ const Banner = () => {
             JOBS LISTING
           </Link>
         </div>
-        <div className="w-11/12 lg:w-9/12 ">
-          <div className="">
-            <Slider {...settings} className="relative ">
-              <div className="absolute flex items-center justify-center bottom-[6px]">
-                <img
-                  className="w-[300px] lg:w-[400px]"
-                  src={bannerImg01}
-                  alt=""
-                />
-              </div>
-              <div className="pl-5 text-white lg:my-16">
+        <div className="w-full mt-10 border-none lg:mt-0 lg:w-8/12 hover:border-none">
+          <Slider
+            {...settings}
+            className="relative border-none hover:border-none"
+          >
+            <div className="absolute flex border-none hover:border-none bottom-[7px] ">
+              <img
+                className="w-[340px] md:w-[400px] lg:w-[400px] xl:w-[445px] border-none hover:border-none"
+                src={bannerImg01}
+                alt=""
+              />
+            </div>
+            <div className=" lg:ml-10">
+              {" "}
+              <div className="my-10 text-left text-white border-2 lg:mr-10 md:mr-28 rounded-xl border-primary xl:my-28">
                 <div>
-                  <div className="relative flex flex-col items-center w-full p-2 bg-white shadow-md cursor-pointer lg:p-6 group hover:bg-primary md:p-8">
-                    <div className="flex flex-col items-center text-gray-600 group-hover:text-white">
+                  <div className="relative flex flex-col items-center w-full p-2 py-12 mr-12 shadow-md cursor-pointer group md:pr-10">
+                    <div className="flex flex-col items-center group-hover:text-white">
                       <svg
                         width={70}
                         height={70}
@@ -124,26 +128,25 @@ const Banner = () => {
                           </clipPath>
                         </defs>
                       </svg>
-                      <p className="mt-4 leading-normal text-center lg:text-lg xl:w-96">
-                        When our designs need an expert opinion or approval, I
-                        know I can rely on your agency Thank you for all your
-                        help-I will be recommending you to everyone
+                      <p className="px-4 mt-8 leading-5 md:px-7 xl:px-14 lg:text-lg xl:w-96">
+                        I found a new job on CareerVolt in just 3 days. It's
+                        incredibly cool! Thank You!
                       </p>
                     </div>
-                    <div className="flex flex-col items-center justify-center mt-10">
+                    <div className="flex flex-col mt-10 text-left">
                       <img
                         src={bannerImg01}
-                        alt="profile pictre"
+                        alt="profile"
                         className="w-16 h-16 px-2 py-2 rounded-full bg-primary mask mask-parallelogram"
                       />
-                      <p className="my-2 text-base font-semibold leading-4 text-gray-800">
-                        Tom Koch
+                      <p className="my-2 text-base font-semibold leading-4 ">
+                        Samanta Hoopes
                       </p>
-                      <p className="text-base leading-4 text-center text-gray-600">
-                        CEO of Unicorn
+                      <p className="text-base leading-4 text-left text-primary ">
+                        Data Analyst
                       </p>
                     </div>
-                    <div className="absolute bottom-0 -mb-6 text-white group-hover:text-orange">
+                    <div className="absolute bottom-0 -mb-6 text-white ">
                       <svg
                         width={34}
                         height={28}
@@ -222,13 +225,20 @@ const Banner = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute flex items-center justify-center bottom-1 ">
-                <img width={360} src={bannerImg02} alt="" />
-              </div>
-              <div className="pl-5 text-white ">
+            </div>
+            <div className="absolute flex border-none hover:border-none bottom-[7px] ">
+              <img
+                className="w-[340px] md:w-[400px] lg:w-[400px] xl:w-[445px] border-none hover:border-none"
+                src={bannerImg02}
+                alt=""
+              />
+            </div>
+            <div className=" lg:ml-10">
+              {" "}
+              <div className="my-10 text-left text-white border-2 lg:mr-10 md:mr-28 rounded-xl border-primary xl:my-28">
                 <div>
-                  <div className="relative flex flex-col w-full bg-white shadow-md cursor-pointer group hover:bg-primary md:p-12">
-                    <div className="flex flex-col text-gray-600 group-hover:text-white">
+                  <div className="relative flex flex-col items-center w-full p-2 py-12 mr-12 shadow-md cursor-pointer group md:pr-10">
+                    <div className="flex flex-col items-center group-hover:text-white">
                       <svg
                         width={70}
                         height={70}
@@ -257,26 +267,25 @@ const Banner = () => {
                           </clipPath>
                         </defs>
                       </svg>
-                      <p className="mt-4 text-lg leading-normal text-left xl:w-96">
-                        When our designs need an expert opinion or approval, I
-                        know I can rely on your agency Thank you for all your
-                        help-I will be recommending you to everyone
+                      <p className="px-4 mt-8 leading-5 md:px-7 xl:px-14 lg:text-lg xl:w-96">
+                        I like the range or oppotunities CareerVolt providing us
+                        to young specialist!
                       </p>
                     </div>
-                    <div className="flex flex-col mt-10">
+                    <div className="flex flex-col mt-10 text-left">
                       <img
                         src={bannerImg02}
-                        alt="profile pictre"
+                        alt="profile"
                         className="w-16 h-16 px-2 py-2 rounded-full bg-primary mask mask-parallelogram"
                       />
-                      <p className="my-2 text-base font-semibold leading-4 text-gray-800">
-                        Tom Koch
+                      <p className="my-2 text-base font-semibold leading-4 ">
+                        John Peterson
                       </p>
-                      <p className="text-base leading-4 text-gray-600">
-                        CEO of Unicorn
+                      <p className="text-base leading-4 text-left text-primary ">
+                        Programmer
                       </p>
                     </div>
-                    <div className="absolute bottom-0 -mb-6 text-white group-hover:text-orange">
+                    <div className="absolute bottom-0 -mb-6 text-white ">
                       <svg
                         width={34}
                         height={28}
@@ -355,13 +364,20 @@ const Banner = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute bottom-1">
-                <img width={400} className="" src={bannerImg03} alt="" />
-              </div>
-              <div className="pl-5 text-white ">
+            </div>
+            <div className="absolute flex border-none hover:border-none bottom-[7px] ">
+              <img
+                className="w-[340px] md:w-[400px] lg:w-[400px] xl:w-[445px] border-none hover:border-none"
+                src={bannerImg03}
+                alt=""
+              />
+            </div>
+            <div className=" lg:ml-10">
+              {" "}
+              <div className="my-10 text-left text-white border-2 lg:mr-10 md:mr-28 rounded-xl border-primary xl:my-28">
                 <div>
-                  <div className="relative flex flex-col items-center w-full p-6 bg-white shadow-md cursor-pointer group hover:bg-primary md:p-8">
-                    <div className="flex flex-col items-center text-gray-600 group-hover:text-white">
+                  <div className="relative flex flex-col items-center w-full p-2 py-12 mr-12 shadow-md cursor-pointer group md:pr-10">
+                    <div className="flex flex-col items-center group-hover:text-white">
                       <svg
                         width={70}
                         height={70}
@@ -390,26 +406,25 @@ const Banner = () => {
                           </clipPath>
                         </defs>
                       </svg>
-                      <p className="mt-4 text-lg leading-normal text-center xl:w-96">
-                        When our designs need an expert opinion or approval, I
-                        know I can rely on your agency Thank you for all your
-                        help-I will be recommending you to everyone
+                      <p className="px-4 mt-8 leading-5 md:px-7 xl:px-14 lg:text-lg xl:w-96">
+                        CareerVolt is my favorite job search site from now.Thank
+                        you for help!
                       </p>
                     </div>
-                    <div className="flex flex-col items-center justify-center mt-10">
+                    <div className="flex flex-col mt-10 text-left">
                       <img
                         src={bannerImg03}
-                        alt="profile pictre"
+                        alt="profile"
                         className="w-16 h-16 px-2 py-2 rounded-full bg-primary mask mask-parallelogram"
                       />
-                      <p className="my-2 text-base font-semibold leading-4 text-gray-800">
+                      <p className="my-2 text-base font-semibold leading-4 ">
                         Tom Koch
                       </p>
-                      <p className="text-base leading-4 text-center text-gray-600">
+                      <p className="text-base leading-4 text-left text-primary ">
                         CEO of Unicorn
                       </p>
                     </div>
-                    <div className="absolute bottom-0 -mb-6 text-white group-hover:text-orange">
+                    <div className="absolute bottom-0 -mb-6 text-white ">
                       <svg
                         width={34}
                         height={28}
@@ -488,8 +503,8 @@ const Banner = () => {
                   </div>
                 </div>
               </div>
-            </Slider>
-          </div>
+            </div>
+          </Slider>
         </div>
       </div>
     </div>

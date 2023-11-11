@@ -65,7 +65,7 @@ const Testimonials = () => {
   return (
     <div className="bg-white ">
       <Helmet>
-        <title>{`${websiteName} | Add Job`}</title>
+        <title>{`${websiteName} | Add Testimonial`}</title>
       </Helmet>
 
       <div>

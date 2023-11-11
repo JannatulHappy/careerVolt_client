@@ -50,7 +50,10 @@ function Login() {
     const websiteName = "Career Volt";
   return (
     <div className="px-5 py-10">
-      <Helmet> <title>{websiteName} | Login</title></Helmet>
+      <Helmet>
+        {" "}
+        <title>{websiteName} | Login</title>
+      </Helmet>
       <div className="py-5 text-center">
         <h1 className="text-4xl font-bold">Please Login</h1>
       </div>
@@ -82,13 +85,13 @@ function Login() {
             />
           </div>
           <div className="mt-6 form-control">
-            <button className="py-3 text-lg font-bold text-white bg-secondary ">
-              Login
+            <button className="py-3 text-lg font-semibold text-white rounded bg-secondary ">
+             LOGIN
             </button>
           </div>
         </form>
         <button
-          className="py-3 text-lg font-bold text-white rounded bg-secondary"
+          className="py-3 text-xl font-medium text-white rounded bg-secondary"
           onClick={handleGoogleSignIn}
         >
           Google Sign In

@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from "../../../assets/logo-inverse.svg";
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
-    <div className=''>
+    <div className="">
       <footer
         className="px-4 text-white divide-y bg-secondary "
         data-aos="fade-up"
@@ -17,7 +18,10 @@ const Footer = () => {
               className="flex justify-center space-x-3 lg:justify-start"
             >
               <div className="w-2/5 py-7">
-                <img src={logo} alt="" />
+                <Link to="/">
+                  {" "}
+                  <img src={logo} alt="" />
+                </Link>
               </div>
             </a>
           </div>
