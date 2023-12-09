@@ -25,6 +25,7 @@ function Login() {
         console.log("login");
         Swal.fire("Good job!", "Login Successfully!", "success");
         // // navigate after login
+        // // navigate after login
         navigate(location?.state ? location?.state : "/");
       })
       .catch((error) => {
@@ -40,8 +41,8 @@ function Login() {
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
-        // navigate after login
-        navigate(location?.state ? location.state : "/");
+        // // navigate after login
+        navigate(location?.state ? location?.state : "/");
       })
       .catch((error) => {
         console.error(error);
@@ -85,7 +86,7 @@ function Login() {
             />
           </div>
           <div className="mt-6 form-control">
-            <button className="py-3 text-lg font-semibold text-white rounded bg-secondary ">
+            <button className="py-3 text-lg font-semibold text-white bg-green-700 rounded ">
              LOGIN
             </button>
           </div>
